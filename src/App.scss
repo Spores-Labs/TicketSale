@@ -1,0 +1,120 @@
+@import 'styles/mui';
+@import 'styles/customize';
+@import 'styles/layout';
+@import '~slick-carousel/slick/slick.css';
+@import '~slick-carousel/slick/slick-theme.css';
+
+body {
+  font-family: 'Segoe UI Variable', sans-serif !important;
+  font-size: 1rem;
+  background-color: #181c1e;
+}
+
+code,
+pre,
+input[type='code'],
+textarea[type='code'] {
+  font-family: monospace !important;
+}
+
+* {
+  outline: none !important;
+}
+
+a:hover {
+  text-decoration: none !important;
+}
+@font-face {
+  font-family: 'Skranji';
+  src: url('assets/fonts/Skranji-Bold.ttf') format('truetype');
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'Skranji';
+  src: url('assets/fonts/Skranji-Regular.ttf') format('truetype');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Avenir';
+  src: url('assets/fonts/AvenirLTStd-Black.otf') format('truetype');
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'Avenir';
+  src: url('assets/fonts/AvenirLTStd-Roman.otf') format('truetype');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Avenir';
+  src: url('assets/fonts/AvenirLTStd-Book.otf') format('truetype');
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'Segoe UI Variable';
+  src: url('assets/fonts/Segoe-UI-Variable-Static-Display-Bold.ttf') format('truetype');
+  font-weight: 700;
+}
+@font-face {
+  font-family: 'Segoe UI Variable';
+  src: url('assets/fonts/Segoe-UI-Variable-Static-Display-Semibold.ttf') format('truetype');
+  font-weight: 500;
+}
+@font-face {
+  font-family: 'Segoe UI Variable';
+  src: url('assets/fonts/Segoe-UI-Variable-Static-Display.ttf') format('truetype');
+  font-weight: 400;
+}
+
+hr {
+  border: 1px solid #3a3a3c;
+}
+
+.text-gray {
+  color: #a2a5a9;
+}
+
+.v-separator {
+  position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1px;
+    height: 100%;
+    background-color: #a2a5a9;
+  }
+}
+
+.text-gradient {
+  background: -webkit-linear-gradient(#ffef5e, #f7936f);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.col {
+  flex: 1 0 0%;
+}
+
+.numberinput--placeholder {
+  &::-webkit-input-placeholder {
+    /* Edge */
+    color: gray 10%;
+    font-size: 20px;
+  }
+
+  &:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: gray 10%;
+    font-size: 20px;
+  }
+
+  &::placeholder {
+    color: gray 10%;
+    font-size: 20px;
+  }
+}

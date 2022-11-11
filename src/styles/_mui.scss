@@ -1,0 +1,81 @@
+.MuiFormControl-root {
+  > label {
+    margin-bottom: 4px;
+    font-size: 14px;
+  }
+  .MuiFormHelperText-root {
+    margin: 0px;
+    font-size: 14px;
+  }
+}
+
+.MuiOutlinedInput-notchedOutline > legend {
+  width: unset;
+}
+
+.MuiCalendarPicker-root {
+  .PrivatePickersFadeTransitionGroup-root .MuiTypography-caption {
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+  .PrivatePickersSlideTransition-root .MuiPickersDay-root {
+    font-size: 0.75rem;
+  }
+}
+
+.MuiDialogActions-root.MuiDialogActions-spacing {
+  padding: 0px;
+  justify-content: center;
+}
+
+.SnackbarItem-message {
+  font-size: 1rem;
+}
+
+.MuiSelect-select {
+  display: flex !important;
+  padding: 0px !important;
+}
+
+.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-width: 0px !important;
+}
+
+#menu- .MuiPaper-root {
+  .MuiList-padding {
+    max-height: 260px;
+    overflow-y: auto;
+    padding: 0px;
+    &::-webkit-scrollbar {
+      height: 4px;
+      width: 4px;
+      border: 1px solid #1a202c;
+      background-color: #1a202c;
+      border-radius: 100px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: #000;
+      border-radius: 10px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: #718096;
+      height: 40px;
+      border-radius: 100px;
+    }
+  }
+
+  .MuiMenuItem-gutters {
+    padding: 6px 0px !important;
+    div {
+      width: 100% !important;
+    }
+    background-color: #463024;
+  }
+
+  .MuiMenuItem-gutters:hover {
+    background-color: #674938;
+  }
+  .data-none {
+    display: none;
+  }
+}

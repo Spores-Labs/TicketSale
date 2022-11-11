@@ -1,0 +1,19 @@
+.box-border {
+  background: #463024;
+  // box-shadow: rgba(112, 0, 255, 0.35) 0px 0px 240px;
+  // border: 2px solid rgb(98, 66, 102);
+  border-radius: 16px;
+  padding: 24px;
+}
+
+@media screen and (max-width: 640px) {
+  .box-border {
+    padding: 16px !important;
+  }
+}
+
+.slick-active {
+  .fill-dot {
+    background: rgba(238, 206, 124, 1) !important;
+  }
+}
