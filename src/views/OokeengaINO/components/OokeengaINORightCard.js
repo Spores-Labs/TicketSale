@@ -71,9 +71,6 @@ export const ButtonCurrency = styled(Button)(({ theme }) => ({
 function OokeengaINORightCard({ time }) {
   const { isLoggedIn, address } = useSelector(({ profile }) => profile);
   const [currency, setCurrency] = React.useState('OKG');
-  const handClickCurrency = (event, index) => {
-    setCurrency(event.target.value);
-  };
   const { projectConfig, marketService, storageService } = useServicesContext();
 
   //get Quota of user level
@@ -170,7 +167,7 @@ function OokeengaINORightCard({ time }) {
   const remainUSDTItems = useMemo(() => pathOr(0, [0, 'remain_amount'], products), [products]);
   const totalRemainItems = useMemo(() => remainSPOItems + remainUSDTItems, [remainSPOItems, remainUSDTItems]);
   const totalItems = useMemo(() => pathOr(0, [0, 'amount'], products) + pathOr(0, [1, 'amount'], products), [products]);
-  const [item, setItem] = React.useState('Genesis Cocoon OKG');
+  const [item, setItem] = React.useState('Champion League Ticket');
   const selectedProduct = useMemo(
     () => products.find((selectedItem) => selectedItem.prices.some((token) => token.payment_token.name === currency)),
     [currency, products],
@@ -192,11 +189,6 @@ function OokeengaINORightCard({ time }) {
   const [amounts, setAmounts] = React.useState(1);
   const price = selectedProduct?.prices[0]?.price;
   const totalPrice = amounts * price;
-  const [discount, setDiscount] = React.useState(0);
-  useEffect(() => {
-    if (item === 'Genesis Cocoon OKG') setDiscount(totalPrice / 9);
-    if (item === 'Genesis Cocoon USD') setDiscount(0);
-  }, [amounts, item, price, totalPrice]);
   //dialog
   const [isOpenCart, onOpenCart, onCloseCart] = usePopup(() => {
     let { createdAt, isContinue = false } = storageService.getOrder();
@@ -231,13 +223,6 @@ function OokeengaINORightCard({ time }) {
   });
   const [isEnoughBalance, setIsEnoughBalance] = React.useState(true);
 
-  const handleChange = (event) => {
-    setItem(event.target.value);
-  };
-  useEffect(() => {
-    if (item === 'Genesis Cocoon OKG') setCurrency('OKG');
-    if (item === 'Genesis Cocoon USD') setCurrency('USDT');
-  }, [item]);
   const [debouncedAmounts] = useDebounce(amounts, 500);
   const checkBalance = useCallback(async () => {
     const { payment_token } = currentPrice;
