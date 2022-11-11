@@ -132,10 +132,10 @@ function OokeengaINORightCard({ time }) {
       case -1: // not started
         return 'Sale starts in';
       case 0: // finished
-        return 'SOLD OUT';
+        return 'SALE HAS ENDED';
       default:
         // finished
-        return 'SOLD OUT';
+        return 'SALE HAS ENDED';
       case 1: // step 1
         return 'Sale ends in';
     }
