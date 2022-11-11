@@ -1,161 +1,119 @@
+import styled from '@emotion/styled';
 import { Link as MuiLink } from '@mui/material';
 import React from 'react';
 
 const OokeengaINOInventory = () => {
   return (
-    <div style={{ color: '#F5E6D5', fontSize: '18px' }}>
-      <div>
-        Ookeenga Web3 Game is the first product of a long-term visionary project of the Ookeenga franchise, including
-        Web2 games, mobile games, and merchandise that revolve around the world of Ookeenga.
-        <br />
-        Inspired by the hit game Clash Royale which has easy but addictive gameplay, Ookeenga is set in a world where
-        insects have evolved and built a massive civilization. The game is a combination of 3 genres that are common in
-        the gaming community: Real-time Strategy, Collectible Card, and Tower Defense. This makes the game easy to pick
-        up but takes time to master.
+    <div className='flex flex-col text-[#481A00]'>
+      <img className='' src={require('assets/projects/championLeague.png')} />
+      <img className='mt-10' src={require('assets/projects/ticket.png')} />
+
+      <div className='font-bold text-[28px] text-center mt-3 mb-8' style={{ fontFamily: 'Skranji' }}>
+        Get Ticket <br />
+        To Join Ookeenga Champion League
       </div>
 
-      <div className='flex mt-6 mb-12 items-center'>
-        <MuiLink
-          href='https://ookeenga.com/#home'
-          className='hover:text-white mr-3 opacity-50 hover:opacity-100'
-          title='Official Website'
-        >
-          <img src={require('assets/icons/media/website.svg').default} />
-        </MuiLink>
-        <MuiLink
-          href='https://twitter.com/ookeenga'
-          className='hover:text-white mr-3 opacity-50 hover:opacity-100'
-          title='Twitter'
-        >
-          <img src={require('assets/icons/media/twitter.svg').default} />
-        </MuiLink>
-        <MuiLink
-          href='https://www.facebook.com/ookeenga.official'
-          className='hover:text-white mr-3 opacity-50 hover:opacity-100'
-          title='Facebook'
-        >
-          <img src={require('assets/icons/media/facebook.svg').default} />
-        </MuiLink>
-        <MuiLink
-          href='https://t.me/ookeenga_global'
-          className='hover:text-white mr-3 opacity-50 hover:opacity-100'
-          title='Telegram'
-        >
-          <img src={require('assets/icons/media/telegram.svg').default} />
-        </MuiLink>
-        <MuiLink
-          href='https://discord.com/invite/B3SXUcrhC4'
-          className='hover:text-white mr-3 opacity-50 hover:opacity-100'
-          title='Discord'
-        >
-          <img src={require('assets/icons/media/discord.svg').default} />
-        </MuiLink>
-        <MuiLink
-          href='https://www.youtube.com/channel/UCqQpViSkkAq_aFP3hj3GL8w'
-          className='text-gray-200 hover:text-white mr-3 opacity-50 hover:opacity-100'
-          title='Youtube'
-        >
-          <img src={require('assets/icons/media/youtube.svg').default} />
-        </MuiLink>
-      </div>
-
-      <div className='font-bold mb-8' style={{ fontSize: '36px', color: '#F5E6D5' }}>
-      Official Game Release on October 20th
-      </div>
-      <iframe
-        className='w-full xl:h-[720px] md:h-[640px] h-[400px]'
-        src='https://www.youtube.com/embed/XQqMKLmxwVA'
-        title='YouTube video player'
-        frameborder='0'
-        allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
-        allowfullscreen
-      />
-      <div className='font-bold mb-8' style={{ fontSize: '36px' }}>
-        Why Genesis Cocoons Are So Valuable
-      </div>
-
-      <p className='font-bold mb-4'>Genesis Cocoons are limited-edition with special pricing.</p>
-      <p className='mb-4'>To start the journey in Ookeenga, player will need 3 Heroes.</p>
-      <span className='mb-4'>
-        In the INO, players can buy <span className='font-bold'>Genesis Cocoons</span> (NFT Heroes Box) to start the
-        journey in Ookeenga. A cocoon in Ookeenga World contains a baby hero inside. The full-grown hero will break the
-        cocoon and come out, ready for action. The Heroes in each Cocoon are unique and can help players to gain victory
-        more easily.{' '}
+      <span className='text-2xl text-left flex items-center mt-6 mb-2' style={{ fontFamily: 'Skranji' }}>
+        <img className='mr-2' src={require('assets/projects/ticketIcon.png')} />
+        Ticket Sales Schedule
       </span>
+
       <div
-        className='w-full my-6 p-2 sm:p-4 md:p-6'
-        style={{
-          backgroundImage: `url(${require('assets/projects/ookeenga-INO/frame.png')})`,
-          backgroundSize: '100% 100%',
-        }}
+        className='flex justify-between items-end md:text-left px-6 py-4 p-5 bg-[#E6BA93] border-[1px] border-[#B37553] rounded-t-2xl font-medium'
       >
-        <video
-          src={
-            'https://spores-marketplace-assets-dev.s3.ap-southeast-1.amazonaws.com/fac5fba0-a7ff-45bb-8d35-d647892b3ffb'
-          }
-          className='w-full rounded-lg'
-          autoPlay
-          loop
-          muted
-        />
+        <div className='font-normal'>From</div>
+        <div className='font-bold text-right text-[#5C1710]'>15 Nov 2022, 05:00 PM UTC</div>
+      </div>
+      <div
+        className='flex justify-between items-end md:text-left px-6 py-4 p-5 bg-[#E6BA93] border-x-[1px] border-[#B37553] font-medium'
+      >
+        <div className='font-normal'>To</div>
+        <div className='font-bold text-right text-[#5C1710]'>17 Nov 2022, 05:00 AM UTC</div>
+      </div>
+      <div
+        className='flex justify-between items-end md:text-left px-6 py-4 p-5 bg-[#E6BA93] border-[1px] border-[#B37553] rounded-b-2xl font-medium'
+      >
+        <div className='font-normal'>Distribution</div>
+        <div className='font-bold text-right text-[#5C1710]'>Entry Ticket will be sent via email</div>
       </div>
 
-      <div className='font-bold mb-8' style={{ fontSize: '36px' }}>
-        Gameplay
+      <span className='text-2xl text-left flex items-center mt-6 mb-2' style={{ fontFamily: 'Skranji' }}>
+        <img className='mr-2' src={require('assets/projects/trophyIcon.png')} />
+        Prize Pool Distribution
+      </span>
+      <div className='p-5 bg-[#E6BA93] border-[1px] border-[#B37553] rounded-2xl font-medium mb-2'>
+        <ul className='list-disc list-inside'>
+          <li className='mb-4'>
+            The rewards will be paid in OKG based on the equivalent exchange rate at the payout time.
+          </li>
+          <li className='mb-4'>Champions will receive rewards within one week after the Leaderboard is announced.</li>
+          <li className='mb-4'>The Prize Pool is distributed as below.</li>
+        </ul>
       </div>
-      <img className='mb-12 w-full' src={require('assets/projects/ookeenga-INO/info8.png')} />
+      <img className='rounded-2xl mb-6' src={require('assets/projects/info1.png')} />
 
-      <div className='font-bold mb-8' style={{ fontSize: '36px' }}>
-        Unique Features
+      <span className='text-2xl text-left flex items-center mt-6 mb-2' style={{ fontFamily: 'Skranji' }}>
+        <img className='mr-2' src={require('assets/projects/ruleBookIcon.png')} />
+        Rules
+      </span>
+      <span className='font-extrabold mb-2'>Organizer</span>
+      <div className='p-5 bg-[#E6BA93] border-[1px] border-[#B37553] rounded-2xl font-medium mb-6'>Ookeenga Lab</div>
+      <span className='font-extrabold mb-2'>Who can join this Champion League?</span>
+      <div className='p-5 bg-[#E6BA93] border-[1px] border-[#B37553] rounded-2xl font-medium mb-6'>
+        Everyone can enter the Champion League.
       </div>
-      <div className='mb-6'>
-        {[
-          {
-            title: 'Battle - and - Earn: ',
-            info: `Fight intense battles against insect monsters (PvE) or other players in real time (PvP) and earn handsome rewards.`,
-            img: require('assets/projects/ookeenga-INO/item1.png'),
-          },
-          {
-            title: 'Breeding: ',
-            info: `Breed two unique NFT Heroes to create a more powerful Hero - increase your army size!`,
-            img: require('assets/projects/ookeenga-INO/item2.png'),
-          },
-          {
-            title: 'Crafting: ',
-            info: `Craft weapons using various resources earned in-game and boost your Heroes’ Power.`,
-            img: require('assets/projects/ookeenga-INO/item3.png'),
-          },
-          {
-            title: 'Land & Farm: ',
-            info: `Own an unique piece of land in Ookeenga and enjoy generous passive income.`,
-            img: require('assets/projects/ookeenga-INO/item4.png'),
-          },
-        ].map((item, index) => (
-          <div key={index} className='flex p-6 items-center' style={{ color: '#F5E6D5' }}>
-            <img src={item.img} />
-            <div className='ml-6'>
-              <span className='font-bold'>{item.title}</span>
-              {item.info}
-            </div>
-          </div>
-        ))}
+      <span className='font-extrabold mb-2'>Limit of participants</span>
+      <div className='p-5 bg-[#E6BA93] border-[1px] border-[#B37553] rounded-2xl font-medium mb-6'>No limit</div>
+      <span className='font-extrabold mb-2'>Rules and Regulations</span>
+      <div className='p-5 bg-[#E6BA93] border-[1px] border-[#B37553] rounded-2xl font-medium mb-6'>
+        <ul className='list-disc list-outside ml-5'>
+          <li className='mb-4'>
+            Each player is given an account to log into the Champion League. The account information will be sent to you
+            after 5 AM UTC on 17 November. One player has only one account.
+          </li>
+          <li className='mb-4'>
+            Each player is given a fixed inventory of 10 Non-NFT Heroes and the same amount of resources, including
+            in-game items, EXP and gKAB. You may swap heroes and cards from that inventory only. You may upgrade heroes
+            and use given items to optimize their strategy for the game.
+          </li>
+          <li className='mb-4'>Each player has 10 playing turns in the Champion League.</li>
+          <li className='mb-4'>All players start at the same stage chosen by the Champion League organizer.</li>
+          <li className='mb-4'>
+            The Champion League will open from 12 PM UTC - 3 PM UTC. During this time, players must log in to the
+            Champion League game. The Leaderboard will be ranked based on the games played in this 3-hour session.
+          </li>
+        </ul>
+
+        <span className='mb-4'>
+          For detail information: visit
+          <MuiLink
+            className='hover:underline'
+            style={{ color: '#B74404' }}
+            href='https://metamask.zendesk.com/hc/en-us/articles/360043227612-How-to-add-a-custom-network-RPC'
+          >
+            {' '}
+            here
+          </MuiLink>
+        </span>
       </div>
 
-      <div className='font-bold mb-8' style={{ fontSize: '36px' }}>
-        NFT Road map
+      <span className='text-2xl text-left flex items-center mt-6 mb-2' style={{ fontFamily: 'Skranji' }}>
+        <img className='mr-2' src={require('assets/projects/rankingIcon.png')} />
+        Ranking System
+      </span>
+      <div className='p-5 bg-[#E6BA93] border-[1px] border-[#B37553] rounded-2xl font-medium mb-6'>
+        <span className='mb-4'>The Ranks on the Champion League Leaderboard are based on the following criteria:</span>
+        <ul className='list-disc list-outside ml-5'>
+          <li className='mb-4'>The number of stars a player gets in 10 playing turns.</li>
+          <li className='mb-4'>
+            If two players have equal numbers of stars, the player at the lower stages will get a higher rank.
+          </li>
+          <li className='mb-4'>
+            If two players have equal numbers of stars and are at the same stage, the player who clears the stages in
+            less time will get a higher rank.
+          </li>
+        </ul>
       </div>
-      <img className='mb-12 w-full' src={require('assets/projects/ookeenga-INO/roadmap.jpg')} />
-
-      <div className='font-bold mb-8' style={{ fontSize: '36px' }}>
-        Game Ecosystem
-      </div>
-      <img className='mb-12 w-full' src={require('assets/projects/ookeenga-INO/eco1.png')} />
-      <img className='mb-12 w-full' src={require('assets/projects/ookeenga-INO/eco2.png')} />
-
-      <div className='font-bold mb-8' style={{ fontSize: '36px' }}>
-        Partners
-      </div>
-      <img className='mb-12 w-full' src={require('assets/projects/ookeenga-INO/partner.png')} />
     </div>
   );
 };

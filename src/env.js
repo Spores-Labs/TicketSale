@@ -1,4 +1,4 @@
-export const API_URL = process.env.REACT_APP_API_URL || 'https://api-lp1.spores.dev/v1/community-sales-ino';
+export const API_URL = process.env.REACT_APP_API_URL || 'https://api-lp1.spores.dev/v1/tickets';
 export const BASE_API_URL = process.env.REACT_APP_BASE_API_URL || 'https://api-lp1.spores.dev/v1';
 export const BOOMI_START_TIME = '2022-01-12T12:00:00.000Z';
 export const BOOMI_END_TIME = '2022-01-14T12:00:00.000Z';

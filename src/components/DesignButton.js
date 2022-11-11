@@ -7,6 +7,7 @@ const DesignButton = ({ design = 'orange', size = 'medium', disabled, loading, .
   return (
     <LoadingButton
       disabled={disabled}
+      fontFamily='Skranji'
       sx={{
         background: `url(${require(`assets/components/${design}_${size}.png`)})`,
         backgroundSize: '100% 100%',

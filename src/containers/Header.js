@@ -40,7 +40,7 @@ const Header = () => {
   const onConnectWallet = useCallback(() => connectWallet(servicesContext), [servicesContext]);
 
   const onOrderHistoryClicked = () => {
-    history.push('/community-sales-ino/order-history');
+    history.push('/tickets/order-history');
   };
   return (
     <div className='relative'>

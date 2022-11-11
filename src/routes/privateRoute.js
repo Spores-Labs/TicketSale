@@ -7,16 +7,12 @@ const OokeengaINOOrder = lazy(() =>
 );
 
 const privateRoute = {
-  // newPage: { 
-  //   path: '/community-sales-ino',
-  //   component: OokeengaINO3,
-  // },
   home: {
-    path: '/community-sales-ino',
+    path: '/tickets',
     component: OokeengaINOLanding,
   },
   projectOrder: {
-    path: '/community-sales-ino/order-history',
+    path: '/tickets/order-history',
     component: OokeengaINOOrder,
     requiredLogin: true,
   },

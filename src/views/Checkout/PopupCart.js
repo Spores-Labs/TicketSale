@@ -64,7 +64,6 @@ const PopupCart = ({ onClose, onSuccess, onRefresh }) => {
         order_id: order.orderId,
         transaction_hash: values.transactionHash,
         email: values.email,
-        referral_code: values.referral_code,
       });
     })();
   };
@@ -229,31 +228,6 @@ const PopupCart = ({ onClose, onSuccess, onRefresh }) => {
         />
         {isEmail === false ? <span style={{ color: '#FF4841', fontSize: '14px' }}>Email is not valid</span> : ''}
 
-        <Controller
-          name='referral_code'
-          defaultValue=''
-          control={control}
-          render={({ field, fieldState: { invalid, error } }) => (
-            <FormControl fullWidth className='mt-6' style={{ color: '#F5E6D5' }}>
-              <label>
-              Referral Code
-              </label>
-              <TextField
-                style={{
-                  background: '#463024',
-                  border: '1px solid #B7A284',
-                  boxSizing: 'border-box',
-                  borderRadius: '4px',
-                  color: '#F5E6D5',
-                }}
-                {...field}
-                InputProps={{ endAdornment: <CreateOutlined style={{ color: '#B7A284' }} /> }}
-                error={invalid}
-                helperText={error?.message}
-              />
-            </FormControl>
-          )}
-        />
         <DialogActions className='flex justify-end mt-6 w-full'>
           <DesignButton
             style={{ height: '80px', width: '160px' }}

@@ -306,105 +306,50 @@ function OokeengaINORightCard({ time }) {
           <img src={projectData.logo} className='h-12 w-12 rounded-lg border-2 border-white' />
           <div className='flex flex-col justify-center content-start items-start'>
             <div className='font-skadi font-bold text-md md:text-lg xl:text-lg 2xl:text-2xl'>
-              {projectData.name} {projectData.saleType}
+              Champion League Ticket
             </div>
           </div>
         </div>
 
         <div className='mt-6'>
-          {isStarted && (
-            <>
-              <div className='flex my-2 justify-between items-end md:text-left'>
-                {isFinished ? (
-                  <div
-                    className='font-normal text-white'
-                    style={{
-                      fontSize: '16px',
-                      color: '#F5E6D5',
-                    }}
-                  >
-                    100%
-                  </div>
-                ) : (
-                  <div
-                    className='font-normal text-white'
-                    style={{
-                      fontSize: '16px',
-                      color: '#F5E6D5',
-                    }}
-                  >
-                    {totalRemainItems !== 0 ? (((totalItems - totalRemainItems) / totalItems) * 100).toFixed(1) : 100}%
-                  </div>
-                )}
+          <div>
+            {!isFinished ? (
+              isStarted ? (
+                <div className='flex text-base justify-between mt-8'>
+                  <div className='text-[#F5E6D5]'>{countdownLabel}</div>
 
-                <div
-                  style={{
-                    fontSize: '16px',
-                    color: '#F5E6D5',
-                  }}
-                >
-                  {totalItems - totalRemainItems} items sold
+                  <div className='text-base text-[#F5E6D5] font-bold'>
+                    {formatTwoDigits(countdownData.countdown.days)}d {formatTwoDigits(countdownData.countdown.hours)}h{' '}
+                    {formatTwoDigits(countdownData.countdown.minutes)}m{' '}
+                    {formatTwoDigits(Math.floor(countdownData.countdown.seconds))}s
+                  </div>
                 </div>
-              </div>
-              <TotalRaiseProgress
-                className='my-2'
-                variant='determinate'
-                value={isFinished ? 100 : ((totalItems - totalRemainItems) / totalItems) * 100}
-              ></TotalRaiseProgress>
-            </>
-          )}
-
-          {totalRemainItems > 0 ? (
-            <div>
-              {!isFinished ? (
-                isStarted ? (
-                  <div className='flex text-base justify-between mt-8'>
-                    <div className='text-[#F5E6D5]'>{countdownLabel}</div>
-
-                    <div className='text-base text-[#F5E6D5] font-bold'>
-                      {formatTwoDigits(countdownData.countdown.days)}d {formatTwoDigits(countdownData.countdown.hours)}h{' '}
-                      {formatTwoDigits(countdownData.countdown.minutes)}m{' '}
-                      {formatTwoDigits(Math.floor(countdownData.countdown.seconds))}s
-                    </div>
-                  </div>
-                ) : (
-                  <div className='flex flex-col justify-between mt-4 items-center'>
-                    <span className='text-xl font-bold mb-4 text-[#F5E6D5]'>{countdownLabel}</span>
-
-                    <span className='text-[#F5E6D5] font-bold text-xl'>
-                      {formatTwoDigits(countdownData.countdown.days)}d {formatTwoDigits(countdownData.countdown.hours)}h{' '}
-                      {formatTwoDigits(countdownData.countdown.minutes)}m{' '}
-                      {formatTwoDigits(Math.floor(countdownData.countdown.seconds))}s
-                    </span>
-                  </div>
-                )
               ) : (
-                <div className='flex text-base justify-center'>
-                  {totalRemainItems !== 0 ? (
-                    <div className='font-bold text-[#DA8B14] mt-8'>{countdownLabel}</div>
-                  ) : (
-                    <></>
-                  )}
+                <div className='flex flex-col justify-between mt-4 items-center'>
+                  <span className='text-xl font-bold mb-4 text-[#F5E6D5]'>{countdownLabel}</span>
+
+                  <span className='text-[#F5E6D5] font-bold text-xl'>
+                    {formatTwoDigits(countdownData.countdown.days)}d {formatTwoDigits(countdownData.countdown.hours)}h{' '}
+                    {formatTwoDigits(countdownData.countdown.minutes)}m{' '}
+                    {formatTwoDigits(Math.floor(countdownData.countdown.seconds))}s
+                  </span>
                 </div>
-              )}
-            </div>
-          ) : (
-            <p
-              className='text-xl mt-6 text-center font-bold bg-clip-text text-transparent'
-              style={{
-                background:
-                  '-webkit-linear-gradient(90deg, rgba(255,130,130,1) 0%, rgba(255,196,79,1) 70%, rgba(255,81,0,1) 100%)',
-                // '-webkit-background-clip': 'text',
-                // '-webkit-text-fill-color': 'transparent',
-              }}
-            >
-              SOLD OUT
-            </p>
-          )}
+              )
+            ) : (
+              <div className='flex text-base justify-center'>
+                {totalRemainItems !== 0 ? <div className='font-bold text-[#DA8B14] mt-8'>{countdownLabel}</div> : <></>}
+              </div>
+            )}
+          </div>
           {!isLoggedIn && (
-            <Button className='w-full mt-8' onClick={onConnectWallet}>
+            <DesignButton
+              design='yellow'
+              size='large'
+              className='h-14 text-base font-semibold mt-4 w-full'
+              onClick={onConnectWallet}
+            >
               Connect wallet
-            </Button>
+            </DesignButton>
           )}
         </div>
 
@@ -418,58 +363,17 @@ function OokeengaINORightCard({ time }) {
       {isStarted && isLoggedIn && !isFinished && !isSoldOut ? (
         <div className='p-7 mt-4 rounded-lg' style={{ backgroundColor: 'rgba(23, 10, 2, 0.8)', color: '#F5E6D5' }}>
           <div className='flex flex-col w-full'>
-            <Select
-              labelId='demo-simple-select-label'
-              id='demo-simple-select'
-              className={clsx('flex px-0 p-2 h-13 rounded-lg mb-6 items-center box-border', styles.icon)}
-              value={item}
-              IconComponent={KeyboardArrowDownIcon}
-              onChange={handleChange}
-            >
-              {products.map((item, index) => {
-                return (
-                  <MenuItem key={item.name} value={item.name}>
-                    <div className='flex w-11/12 gap-4 bg-transparent'>
-                      <img className='ml-2' src={require('assets/projects/ookeenga-INO/item.png')} />
-                      <div className='flex flex-col justify-between'>
-                        <span className='text-[#DA8B14] font-bold text-lg'>{item.name}</span>
-                        <div className='flex gap-2 items-center'>
-                          {item.name === 'Genesis Cocoon OKG' ? (
-                            <span className='text-[#F5E6D5] text-base'>
-                              {formatNumber(Math.round((item.prices[0].price / 9) * 10))}{' '}
-                              {item.prices[0].payment_token.name} &nbsp;| &nbsp; {item.remain_amount} left
-                            </span>
-                          ) : (
-                            <span className='text-[#F5E6D5] text-base'>
-                              {formatNumber(Math.round(item.prices[0].price))}{' '}
-                              {item.prices[0].payment_token.name === 'USDT' ? 'USD' : item.prices[0].payment_token.name}{' '}
-                              &nbsp;| &nbsp;
-                              {item.remain_amount} left
-                            </span>
-                          )}
-                        </div>
-                      </div>
-                    </div>
-                  </MenuItem>
-                );
-              })}
-            </Select>
-            <div className='mb-4 flex justify-between items-center'>
-              <span className='text-[#F5E6D5]'>Currency</span>
-              <div className='flex flex-row mt-1'>
-                {selectedProduct?.prices?.map((item, index) => (
-                  <ButtonCurrency
-                    key={index}
-                    className={item.payment_token.name === currency ? 'active ml-2' : 'ml-2'}
-                    value={item.payment_token.name}
-                    onClick={(e) => handClickCurrency(e, index)}
-                  >
-                    {item.payment_token.name}
-                  </ButtonCurrency>
-                ))}
+            <div className='flex w-full gap-4 bg-[#463024] rounded-lg p-3'>
+              <img className='' src={require('assets/projects/item.png')} />
+              <div className='flex flex-col justify-between'>
+                <span className='text-[#F5E6D5] font-bold text-lg'>Champion League Ticket</span>
+                <div className='flex gap-2 items-center'>
+                  <span className='text-[#F5E6D5] text-base'>360 OKG</span>
+                </div>
               </div>
             </div>
-            <div className='flex justify-between items-center text-white mt-2 mb-6'>
+
+            <div className='flex justify-between items-center text-white mt-6 mb-6'>
               <span style={{ color: '#F5E6D5' }}>Quantity</span>
               <div className='flex items-center rounded p-1' style={{ backgroundColor: '#463024' }}>
                 <IconButton size='small' className='mx-1' onClick={() => setAmounts(Math.max(0, amounts - 1))}>
@@ -497,25 +401,10 @@ function OokeengaINORightCard({ time }) {
                 </IconButton>
               </div>
             </div>
-            <div className='bg-[#8F6148] mb-4' style={{ width: '100%', height: '1px' }} />
-            <div className='flex flex-row justify-between mb-4'>
-              <span style={{ color: '#F5E6D5' }}>Subtotal</span>
-              <span className=' text-[#FAFAFA]'>{`${
-                amounts ? formatNumber(Math.round(discount + totalPrice)) : 0
-              } ${currency}`}</span>
-            </div>
 
-            <div className='flex flex-row justify-between mb-4'>
-              <span style={{ color: '#F5E6D5' }}>Discount</span>
-
-              <span className='text-[#FAFAFA]'>{`${
-                amounts ? formatNumber(Math.round(discount)) : 0
-              } ${currency}`}</span>
-            </div>
-
-            <div className='flex flex-row justify-between mb-6'>
+            <div className='flex flex-row justify-between mb-6 bg-[#463024] px-3 py-5 rounded-lg'>
               <span className='text-[#F5E6D5]'>Total</span>
-              <span className='font-bold text-[#DA8B14]'>
+              <span className='font-bold text-[#DA8B14] text-xl'>
                 {`${amounts ? formatNumber(Math.round(totalPrice)) : 0} ${currency}`}
               </span>
             </div>

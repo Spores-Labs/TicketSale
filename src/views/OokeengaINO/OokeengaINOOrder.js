@@ -23,7 +23,7 @@ const OokeengaINOOrder = () => {
   );
   useEffect(() => {
     if (isLoggedIn) return;
-    window.location.href = '/community-sales-ino';
+    window.location.href = '/tickets';
   }, [isLoggedIn]);
   return (
     <div
