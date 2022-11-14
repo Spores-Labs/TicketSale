@@ -286,7 +286,7 @@ function OokeengaINORightCard({ time }) {
   const onConnectWallet = useCallback(() => connectWallet(servicesContext), [servicesContext]);
   return (
     <div>
-      <div className='p-7 rounded-lg' style={{ backgroundColor: 'rgba(23, 10, 2, 0.8)', color: '#F5E6D5' }}>
+      <div className='p-3 sm:p-7 rounded-lg' style={{ backgroundColor: 'rgba(23, 10, 2, 0.8)', color: '#F5E6D5' }}>
         <div className='flex space-x-4 mb-4 justify-center xl:justify-start'>
           <img src={projectData.logo} className='h-12 w-12 rounded-lg border-2 border-white' />
           <div className='flex flex-col justify-center content-start items-start'>
@@ -346,12 +346,12 @@ function OokeengaINORightCard({ time }) {
         </Dialog>
       </div>
       {isStarted && isLoggedIn && !isFinished && !isSoldOut ? (
-        <div className='p-7 mt-4 rounded-lg' style={{ backgroundColor: 'rgba(23, 10, 2, 0.8)', color: '#F5E6D5' }}>
+        <div className='p-3 sm:p-7 mt-4 rounded-lg' style={{ backgroundColor: 'rgba(23, 10, 2, 0.8)', color: '#F5E6D5' }}>
           <div className='flex flex-col w-full'>
             <div className='flex w-full gap-4 bg-[#463024] rounded-lg p-3'>
               <img className='' src={require('assets/projects/item.png')} />
               <div className='flex flex-col justify-between'>
-                <span className='text-[#F5E6D5] font-bold text-lg'>Champion League Ticket</span>
+                <span className='text-[#F5E6D5] font-bold text-md md:text-lg'>Champion League Ticket</span>
                 <div className='flex gap-2 items-center'>
                   <span className='text-[#F5E6D5] text-base'>360 OKG</span>
                 </div>
@@ -359,7 +359,7 @@ function OokeengaINORightCard({ time }) {
             </div>
 
             <div className='flex justify-between items-center text-white mt-6 mb-6'>
-              <span style={{ color: '#F5E6D5' }}>Quantity</span>
+              <span className='' style={{ color: '#F5E6D5' }}>Quantity</span>
               <div className='flex items-center rounded p-1' style={{ backgroundColor: '#463024' }}>
                 <IconButton size='small' className='mx-1' onClick={() => setAmounts(Math.max(0, amounts - 1))}>
                   <Remove className='text-[#F5E6D5] ' />

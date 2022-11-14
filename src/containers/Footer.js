@@ -37,7 +37,7 @@ const Footer = memo(() => {
         >
          Marketplace
         </MuiLink>
-        <div style={{ color: '#CCC3B5', fontSize: '14px' }}>Contact Us: support@ookeenga.io</div>
+        <div style={{ color: '#CCC3B5', fontSize: '14px' }}>Contact Us: support@okglabs.com</div>
       </Toolbar>
     </AppBar>
   );

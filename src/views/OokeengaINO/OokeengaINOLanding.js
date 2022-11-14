@@ -26,9 +26,9 @@ const OokeengaINOLanding = () => {
       className='bg-no-repeat bg-fixed'
       style={{ backgroundImage: `url(${projectData.background})`, backgroundSize: '100% 100%' }}
     >
-      <SupportButton />
+      {/* <SupportButton /> */}
       <div
-        className='p-4 lg:px-20 lg:pt-8 flex flex-col items-center justify-center'
+        className='p-4 px-0 lg:px-20 lg:pt-8 flex flex-col items-center justify-center'
         style={{
           backgroundPosition: 'center center',
           backgroundSize: 'cover',
@@ -48,8 +48,8 @@ const OokeengaINOLanding = () => {
           </Grid>
           <Grid item md={12} lg={8} xl={8}>
             <div
-              className='bg-no-repeat bg-cover px-36 pt-8 pb-[500px]'
-              style={{ backgroundImage: `url(${projectData.infoBackground})`, backgroundSize: '100% 100%' }}
+              className='bg-no-repeat bg-contain px-8 sm:px-20 md:px-36 pt-8 pb-60 md:pb-[500px]'
+              style={{ backgroundImage: `url(${projectData.infoBackground})`, backgroundSize: '100% 100% @important' }}
             >
               <OokeengaINOInventory />
             </div>

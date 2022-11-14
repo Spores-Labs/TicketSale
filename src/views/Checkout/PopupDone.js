@@ -23,7 +23,7 @@ const PopupDone = memo(({ onDone }) => {
       </span>
       <span style={{ color: '#F5E6D5', fontSize: '14px' }}>Feel free to contact us at:</span>
       <span className='mb-4' style={{ color: '#DA8B14', fontSize: '14px' }}>
-        support@ookeenga.io
+      support@okglabs.com
       </span>
       <DesignButton
         design='orange'
