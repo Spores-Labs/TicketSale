@@ -47,27 +47,17 @@ const Header = () => {
       <AppBar className='px-4' position='sticky' elevation={0} style={{ backgroundColor: 'rgba(60, 44, 25, 0.8)' }}>
         <Toolbar>
           <Link to={privateRoute.home.path}>
-            <img src={require('assets/icons/Logo_Long version.png')} className='h-10 sm:h-10 lg:ml-40' />
+            <img src={require('assets/icons/LabIcon.png')} className='h-10 sm:h-10 ' />
           </Link>
-          <MuiLink
-            href='https://ookeenga.io/'
-            className='sm:inline hidden hover:text-white ml-8 font-bold text-md'
-            style={{ color: '#B7A284' }}
-          >
-            Home
-          </MuiLink>
-          <MuiLink
-            href='https://ookeenga.io/'
-            className='sm:inline hidden hover:text-white ml-8 font-bold text-md'
-            style={{ color: '#B7A284' }}
-          >
-            Marketplace
-          </MuiLink>
           <div className='mx-6'>{isNetwork && <NetworkBar hidden />}</div>
 
           <div className='flex-1 flex items-center justify-end'>
-            <MuiLink href='https://testnet.ookeenga.io/' className='text-gray-200 hover:text-white mr-3'>
-              <img src={require('assets/projects/ookeenga-INO/Play Button.png')} />
+            <MuiLink
+              href='https://pancakeswap.finance/swap?inputCurrency=0x55d398326f99059fF775485246999027B3197955&outputCurrency=0x7758a52c1Bb823d02878B67aD87B6bA37a0CDbF5'
+              className='sm:inline hidden hover:text-white mr-8 font-bold text-md'
+              style={{ color: '#B7A284' }}
+            >
+              Get OKG
             </MuiLink>
             <div className='flex items-center'>
               {!isLoggedIn ? (
