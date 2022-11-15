@@ -44,10 +44,10 @@ const Header = () => {
   };
   return (
     <div className='relative'>
-      <AppBar className='px-4' position='sticky' elevation={0} style={{ backgroundColor: 'rgba(60, 44, 25, 0.8)' }}>
+      <AppBar className='sm:px-4' position='sticky' elevation={0} style={{ backgroundColor: 'rgba(60, 44, 25, 0.8)' }}>
         <Toolbar>
           <Link to={privateRoute.home.path}>
-            <img src={require('assets/icons/LabIcon.png')} className='h-10 sm:h-10 ' />
+            <img src={require('assets/icons/LabIcon.png')} className='h-6 w-24 sm:h-10 sm:w-40' />
           </Link>
           <div className='mx-6'>{isNetwork && <NetworkBar hidden />}</div>
 

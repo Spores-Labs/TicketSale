@@ -2,8 +2,8 @@ import { store } from 'reducers';
 import { accountService as defaultAccountService } from 'services/account';
 import { marketService as defaultMarketService } from 'services/market';
 import { signInWithSuffix } from 'reducers/profileSlice';
-import { openAlert } from 'reducers/alertSlice';
-import Web3 from 'web3';
+import { connectAddress } from 'utils/wallet';
+import { web3 } from 'contracts/contract';
 import { isEmpty, pathOr } from 'ramda';
 
 export const connectWallet = async (servicesContext, callback) => {
@@ -13,24 +13,16 @@ export const connectWallet = async (servicesContext, callback) => {
     accountService = servicesContext.accountService || defaultAccountService;
   }
 
-  if (window.ethereum) {
-    window.web3 = new Web3(window.ethereum);
-  } else if (window.web3) {
-    window.web3 = new Web3(window.web3.currentProvider);
-  } else {
-    return store.dispatch(openAlert({ message: 'Please install MetaMask', variant: 'warning' }));
-  }
-
-  const [user] = await window.ethereum.request({ method: 'eth_requestAccounts' });
+  const addr = await connectAddress();
 
   const { isLoggedIn } = store.getState().profile;
   if (isLoggedIn) {
     if (typeof callback === 'function') callback();
   } else {
     try {
-      const nonce = await accountService.connect({ public_address: user });
+      const nonce = await accountService.connect({ public_address: addr });
       const message = `login one-time code: ${nonce}`;
-      const rawSig = await window.web3.eth.personal.sign(message, user);
+      const rawSig = await web3.eth.personal.sign(message, addr); 
       const splitAt = rawSig.length - 2;
       let v = rawSig.slice(-2);
       if (v === '00') {
@@ -45,11 +37,11 @@ export const connectWallet = async (servicesContext, callback) => {
         projectSuffix = `_${projectSuffix}`;
       }
 
-      const { ...token } = await accountService.login({ public_address: user, signature });
+      const { ...token } = await accountService.login({ public_address: addr, signature });
       store.dispatch(
         signInWithSuffix({
           suffix: projectSuffix,
-          data: { address: user, ...token },
+          data: { address: addr, ...token },
         }),
       );
       const { name, product_can_buy, discount, min_discount_quantity } = await marketService.getQuota();
