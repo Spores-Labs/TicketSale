@@ -79,9 +79,9 @@ const HowToBuy = () => {
       <div className='font-bold mb-4'>1. Payment issues</div>
       <div className='mb-4'>
         1.1. What to do when I underpay the order?<br></br> When you accidentally underpay your order, you can make
-        another transaction for the unpaid amount and inform us via support@okglabs.com to secure your items. In
-        case you do not take any further action, the order will get rejected and we will refund you in compliance with
-        the refund policy.
+        another transaction for the unpaid amount and inform us via support@okglabs.io to secure your items. In case you
+        do not take any further action, the order will get rejected and we will refund you in compliance with the refund
+        policy.
       </div>
       <div className='mb-4'>
         1.2. What to do when I overpay the order?<br></br> If you overpay for your order, we’ll still accept the order
@@ -104,7 +104,7 @@ const HowToBuy = () => {
       <div className='mb-4'>
         2.2. Where can I get post-sale information?<br></br>
         Any post-sale information will be published on Spores and partners’ website, medium, twitter & social media.
-        Please refer to them or contact us via support@okglabs.com.
+        Please refer to them or contact us via support@okglabs.io.
       </div>
     </div>
   );
