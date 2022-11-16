@@ -225,6 +225,7 @@ function OokeengaINORightCard({ time }) {
 
   const [debouncedAmounts] = useDebounce(amounts, 500);
   const checkBalance = useCallback(async () => {
+    if (!currentPrice) return;
     const { payment_token } = currentPrice;
     const balance = payment_token?.address
       ? await erc20Contract(payment_token?.address).methods.balanceOf(address).call()
@@ -374,6 +375,7 @@ function OokeengaINORightCard({ time }) {
                     onBlur={onBlur}
                     maxLength={3}
                     allowNegative={false}
+                    decimalScale={0}
                     className='w-11 text-center bg-transparent'
                   />
                 </div>

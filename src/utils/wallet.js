@@ -11,11 +11,12 @@ export const connectProvider = async () => {
     walletconnect: {
       package: WalletConnectProvider,
       options: {
-        rpc: [
-          { '0x38': 'https://bsc-dataseed.binance.org' },
-          { '0x61': 'https://data-seed-prebsc-1-s1.binance.org:8545' },
-          // TODO add required chainId and rpcUrl zô
-        ],
+        rpc: {
+          97: 'https://data-seed-prebsc-1-s1.binance.org:8545',
+          1: 'https://mainnet.infura.io/v3/',
+          56: 'https://bsc-dataseed.binance.org',
+          4: 'https://rinkeby.infura.io',
+        },
       },
     },
   };
