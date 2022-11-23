@@ -15,6 +15,7 @@ export const createMarketService = (projectConfig) => {
   const submitOrder = ({ order_id, ...body }) => client.post(`/order/${order_id}/submit`, body);
   const cancelOrder = ({ order_id }) => client.delete(`/order/${order_id}`);
   const getMaxAmount = () => client.get('/max-amount');
+  const fetchAccountInfo = () => client.get('/tickets-accounts');
 
   marketServices[projectConfig.alias] = {
     getQuota,
@@ -25,6 +26,7 @@ export const createMarketService = (projectConfig) => {
     submitOrder,
     cancelOrder,
     getMaxAmount,
+    fetchAccountInfo,
   };
 
   return marketServices[projectConfig.alias];

@@ -7,6 +7,7 @@ import {
   Typography,
   Select,
   MenuItem,
+  Divider,
 } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { erc20Contract, web3 } from 'contracts/contract';
@@ -25,11 +26,48 @@ import { useDebounce } from 'use-debounce';
 import { useServicesContext } from 'services/ServicesContext';
 import { isNil, pathOr } from 'ramda';
 import { projectData } from '../Data';
-import { DesignButton } from 'components';
 import { ReactComponent as KeyboardArrowDownIcon } from '../../../assets/projects/dinoX/KeyboardArrowDownIcon.svg';
 import { connectWallet } from 'reducers/profileAction';
 import { createUseStyles } from 'react-jss';
 import clsx from 'clsx';
+import { LoadingButton } from '@mui/lab';
+
+export const StyledButton = ({
+  design = 'linear-gradient(152.68deg, #E1A34F 16.58%, #A36C22 82.97%)',
+  size = 'medium',
+  disabled,
+  loading,
+  ...props
+}) => {
+  if (disabled) design = 'linear-gradient(152.68deg, #71604A 16.58%, #5B4B36 82.97%)';
+  return (
+    <LoadingButton
+      disabled={disabled}
+      fontFamily='Skranji'
+      sx={{
+        borderRadius: '8px',
+        background: design,
+        textShadow:
+          design === 'linear-gradient(152.68deg, #71604A 16.58%, #5B4B36 82.97%)'
+            ? '0px 2px 2px 0px #61412780'
+            : '0px 2px 2px rgba(97, 65, 39, 0.5)',
+
+        boxShadow: '0px 4px 32px rgba(68, 43, 23, 0.2), 0px 2px 4px rgba(68, 43, 23, 0.3)',
+        backgroundSize: '100% 100%',
+        fontFamily: 'Skranji',
+        color: design === 'linear-gradient(152.68deg, #71604A 16.58%, #5B4B36 82.97%)' ? '#7B6C5B' : '#FFEAD2',
+        paddingLeft: 2,
+        paddingRight: 2,
+        minWidth: 0,
+      }}
+      classes={{
+        sizeLarge: 'h-15 text-xl',
+        sizeMedium: 'h-11',
+      }}
+      {...props}
+    />
+  );
+};
 
 export const TotalRaiseProgress = styled(LinearProgress)(({ theme }) => ({
   height: 8,
@@ -224,12 +262,15 @@ function OokeengaINORightCard({ time }) {
   const [isEnoughBalance, setIsEnoughBalance] = React.useState(true);
 
   const [debouncedAmounts] = useDebounce(amounts, 500);
+  
   const checkBalance = useCallback(async () => {
     if (!currentPrice) return;
     const { payment_token } = currentPrice;
     const balance = payment_token?.address
-      ? await erc20Contract(payment_token?.address).methods.balanceOf(address).call()
+      ? await erc20Contract(payment_token.address).methods.balanceOf(address).call()
       : await web3.eth.getBalance(address);
+    
+      console.log(web3.eth)
     const isEnough = Number(balance) >= totalPrice * 10 ** (payment_token.decimal || 18);
     return isEnough;
   }, [address, currentPrice, totalPrice]);
@@ -287,13 +328,17 @@ function OokeengaINORightCard({ time }) {
   const onConnectWallet = useCallback(() => connectWallet(servicesContext), [servicesContext]);
   return (
     <div>
-      <div className='p-3 sm:p-7 rounded-lg' style={{ backgroundColor: 'rgba(23, 10, 2, 0.8)', color: '#F5E6D5' }}>
+      <div
+        className='p-3 sm:p-7 rounded-lg'
+        style={{
+          background: 'linear-gradient(132.01deg, rgba(188, 142, 106, 0.6) 20.54%, rgba(104, 64, 32, 0.6) 79.14%)',
+          color: '#F5E6D5',
+        }}
+      >
         <div className='flex space-x-4 mb-4 justify-center xl:justify-start'>
-          <img src={projectData.logo} className='h-12 w-12 rounded-lg border-2 border-white' />
+          <img src={projectData.logo} className='rounded-lg md:w-20 md:h-20' />
           <div className='flex flex-col justify-center content-start items-start'>
-            <div className='font-skadi font-bold text-md md:text-lg xl:text-lg 2xl:text-2xl'>
-              Champion League Ticket
-            </div>
+            <div className='font-skadi font-bold text-md sm:text-2xl'>Champion League Ticket</div>
           </div>
         </div>
 
@@ -302,9 +347,9 @@ function OokeengaINORightCard({ time }) {
             {!isFinished ? (
               isStarted ? (
                 <div className='flex text-base justify-between mt-8'>
-                  <div className='text-[#F5E6D5]'>{countdownLabel}</div>
+                  <div className='text-[#CAA57B]'>{countdownLabel}</div>
 
-                  <div className='text-base text-[#F5E6D5] font-bold'>
+                  <div className='text-base text-[#CAA57B] font-bold'>
                     {formatTwoDigits(countdownData.countdown.days)}d {formatTwoDigits(countdownData.countdown.hours)}h{' '}
                     {formatTwoDigits(countdownData.countdown.minutes)}m{' '}
                     {formatTwoDigits(Math.floor(countdownData.countdown.seconds))}s
@@ -312,7 +357,7 @@ function OokeengaINORightCard({ time }) {
                 </div>
               ) : (
                 <div className='flex flex-col justify-between mt-4 items-center'>
-                  <span className='text-xl font-bold mb-4 text-[#F5E6D5]'>{countdownLabel}</span>
+                  <span className='text-xl font-bold mb-4 text-[#CAA57B]'>{countdownLabel}</span>
 
                   <span className='text-[#F5E6D5] font-bold text-xl'>
                     {formatTwoDigits(countdownData.countdown.days)}d {formatTwoDigits(countdownData.countdown.hours)}h{' '}
@@ -328,14 +373,9 @@ function OokeengaINORightCard({ time }) {
             )}
           </div>
           {!isLoggedIn && (
-            <DesignButton
-              design='yellow'
-              size='large'
-              className='h-14 text-base font-semibold mt-4 w-full'
-              onClick={onConnectWallet}
-            >
+            <StyledButton size='large' className='h-14 text-base font-semibold mt-4 w-full' onClick={onConnectWallet}>
               Connect wallet
-            </DesignButton>
+            </StyledButton>
           )}
         </div>
 
@@ -347,28 +387,45 @@ function OokeengaINORightCard({ time }) {
         </Dialog>
       </div>
       {isStarted && isLoggedIn && !isFinished && !isSoldOut ? (
-        <div className='p-3 sm:p-7 mt-4 rounded-lg' style={{ backgroundColor: 'rgba(23, 10, 2, 0.8)', color: '#F5E6D5' }}>
+        <div
+          className='p-3 sm:p-7 mt-4 rounded-lg'
+          style={{
+            background: 'linear-gradient(132.01deg, rgba(188, 142, 106, 0.6) 20.54%, rgba(104, 64, 32, 0.6) 79.14%)',
+            color: '#F5E6D5',
+          }}
+        >
           <div className='flex flex-col w-full'>
-            <div className='flex w-full gap-4 bg-[#463024] rounded-lg p-3'>
+            <div
+              className='flex w-full gap-4 rounded-lg p-3'
+              style={{
+                background:
+                  'linear-gradient(141.89deg, rgba(209, 163, 126, 0.6) 21.56%, rgba(201, 148, 105, 0.6) 79.09%)',
+              }}
+            >
               <img className='' src={require('assets/projects/item.png')} />
               <div className='flex flex-col justify-between'>
-                <span className='text-[#F5E6D5] font-bold text-md md:text-lg'>Champion League Ticket</span>
+                <span className='text-[#FFEAD2] text-md md:text-lg'>Champion League Ticket</span>
                 <div className='flex gap-2 items-center'>
-                  <span className='text-[#F5E6D5] text-base'>360 OKG</span>
+                  <span className='text-[#FFEAD2] font-extrabold'>360 OKG</span>
                 </div>
               </div>
             </div>
 
             <div className='flex justify-between items-center text-white mt-6 mb-6'>
-              <span className='' style={{ color: '#F5E6D5' }}>Quantity</span>
-              <div className='flex items-center rounded p-1' style={{ backgroundColor: '#463024' }}>
+              <span className='' style={{ color: '#CAA57B' }}>
+                Quantity
+              </span>
+              <div
+                className='flex items-center rounded p-1'
+                style={{
+                  background:
+                    'linear-gradient(141.89deg, rgba(209, 163, 126, 0.6) 21.56%, rgba(201, 148, 105, 0.6) 79.09%)',
+                }}
+              >
                 <IconButton size='small' className='mx-1' onClick={() => setAmounts(Math.max(0, amounts - 1))}>
-                  <Remove className='text-[#F5E6D5] ' />
+                  <Remove className='text-[#FFEAD2] ' />
                 </IconButton>
-                <div
-                  className='rounded font-medium p-1 border'
-                  style={{ borderColor: '#636366', background: 'rgba(23, 10, 2, 0.8)' }}
-                >
+                <div className='rounded font-medium p-1' style={{ background: '#805535' }}>
                   <NumberFormat
                     value={amounts}
                     onValueChange={({ floatValue: value }) => setAmounts(value)}
@@ -376,7 +433,7 @@ function OokeengaINORightCard({ time }) {
                     maxLength={3}
                     allowNegative={false}
                     decimalScale={0}
-                    className='w-11 text-center bg-transparent'
+                    className='w-11 text-center bg-transparent text-[#FFEAD2]'
                   />
                 </div>
                 <IconButton
@@ -384,38 +441,40 @@ function OokeengaINORightCard({ time }) {
                   className='mx-1'
                   onClick={() => setAmounts(Math.min(product.remain_amount, amounts + 1))}
                 >
-                  <Add className='text-[#F5E6D5]' />
+                  <Add className='text-[#FFEAD2]' />
                 </IconButton>
               </div>
             </div>
 
-            <div className='flex flex-row justify-between mb-6 bg-[#463024] px-3 py-5 rounded-lg'>
-              <span className='text-[#F5E6D5]'>Total</span>
+            <Divider className='bg-[#8A5F3E] mb-4' />
+
+            <div className='flex flex-row justify-between mb-6 bg-transparent py-2 rounded-lg'>
+              <span className='text-[#CAA57B]'>Total</span>
               <span className='font-bold text-[#DA8B14] text-xl'>
                 {`${amounts ? formatNumber(Math.round(totalPrice)) : 0} ${currency}`}
               </span>
             </div>
 
-            {!isEnoughBalance ? (
-              <div className='flex justify-center mb-4'>
-                <WarningImg className='mr-1' />
-                <span className='text-error'>Insufficient balance</span>
-              </div>
-            ) : !correctAmounts ? (
-              <div className='flex justify-center mb-4'>
-                <WarningImg className='mr-1' />
-                <span className='text-error'>Incorrect amount</span>
-              </div>
-            ) : null}
-            <DesignButton
-              design='orange'
+            <StyledButton
               size='large'
               disabled={!amounts}
-              className='h-14 text-base font-semibold'
+              className='h-14 text-[20px] font-normal'
               onClick={handleClickCheckout}
             >
               CHECK OUT
-            </DesignButton>
+            </StyledButton>
+
+            {!isEnoughBalance ? (
+              <div className='flex justify-center mt-4'>
+                <WarningImg className='mr-1' />
+                <span className='text-[#FF7613]'>Insufficient balance</span>
+              </div>
+            ) : !correctAmounts ? (
+              <div className='flex justify-center mt-4'>
+                <WarningImg className='mr-1' />
+                <span className='text-[#FF7613]'>Incorrect amount</span>
+              </div>
+            ) : null}
           </div>
         </div>
       ) : (

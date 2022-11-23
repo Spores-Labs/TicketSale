@@ -1,7 +1,6 @@
 import { Typography, Box, AppBar, Grid } from '@mui/material';
 import React from 'react';
 import PropTypes from 'prop-types';
-import { DesignButton } from 'components';
 import SwipeableViews from 'react-swipeable-views';
 import { useTheme } from '@mui/material/styles';
 import Tabs, { tabsClasses } from '@mui/material/Tabs';
@@ -9,9 +8,7 @@ import Tab from '@mui/material/Tab';
 import OokeengaINOInventory from './OokeengaINOInventory';
 import HowToBuy from './HowToBuy';
 import { styled } from '@mui/system';
-import { projectData } from '../Data';
 import { DateTime } from 'luxon';
-import NumberFormat from 'react-number-format';
 
 const StyledAppBar = styled(AppBar)(({ theme }) => ({
   backgroundColor: 'transparent',

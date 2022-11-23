@@ -148,11 +148,11 @@ export const appTheme = createTheme({
           color: '#F5E6D5',
         },
         body: {
-          backgroundColor: '#463024',
+          backgroundColor: 'transparent',
           color: '#F5E6D5',
         },
         root: {
-          border: '1px solid #655349',
+          borderBottom: '1px solid #655349',
         },
       },
     },

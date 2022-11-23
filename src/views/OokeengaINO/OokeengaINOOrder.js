@@ -1,61 +1,80 @@
 import React, { useEffect } from 'react';
 import { useQuery } from 'react-query';
-import { Container, Table, TableHead, TableBody, TableCell, TableRow, Typography } from '@mui/material';
+import {
+  Table,
+  TableHead,
+  TableBody,
+  TableCell,
+  TableRow,
+  Box,
+  TableContainer,
+  IconButton,
+  Snackbar,
+  Alert,
+} from '@mui/material';
 import { DateTime } from 'luxon';
 import { shorten } from 'utils/common';
 import { formatNumber } from 'utils/common';
 import { useServicesContext } from 'services/ServicesContext';
 import { projectData } from './Data';
 import { useSelector } from 'react-redux';
+import ContentCopyIcon from '@mui/icons-material/ContentCopy';
+import VisibilityIcon from '@mui/icons-material/Visibility';
+import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 
 const STATUS_MAP = {
-  1: { name: 'PENDING', color: '#FF991F' },
-  2: { name: 'PENDING', color: '#FF991F' },
-  3: { name: 'SUCCESS', color: '#00875A' },
-  4: { name: 'FAILED', color: '#DE350B' },
+  1: { name: 'PENDING', color: '#564A26', textColor: '#FFD65B' },
+  2: { name: 'PENDING', color: '#564A26', textColor: '#FFD65B' },
+  3: { name: 'SUCCESS', color: '#154635', textColor: '#42E366' },
+  4: { name: 'FAILED', color: '#5B2D36', textColor: '#FF5757' },
 };
 
 const OokeengaINOOrder = () => {
+  const [openSnackBar, setOpenSnackBar] = React.useState(false);
+  const [isVisible, setIsVisible] = React.useState(false);
   const { isLoggedIn } = useSelector(({ profile }) => profile);
   const { projectConfig, marketService } = useServicesContext();
   const { data: dataList = [] } = useQuery([`${projectConfig.alias}_marketService.searchSales`], () =>
     marketService.fetchOrders(),
   );
+  const { data: dataAccount = [] } = useQuery(
+    [`${projectConfig.alias}_marketService.fetchAccountInfo`],
+    () => marketService.fetchAccountInfo(),
+    {
+      isVisible: false,
+    },
+  );
+  console.log(dataAccount);
   useEffect(() => {
     if (isLoggedIn) return;
     window.location.href = '/tickets';
   }, [isLoggedIn]);
+  const handleClose = () => {
+    setOpenSnackBar(false);
+  };
   return (
-    <div
-      className='bg-no-repeat bg-fixed flex-1'
-      style={{ backgroundImage: `url(${projectData.background})`, backgroundSize: '100% 100%', height: '100vh' }}
+    <Box
+      sx={{ flexGrow: 1 }}
+      className='bg-no-repeat bg-cover flex-1 flex items-center lg:items-start flex-col lg:pl-12'
+      style={{ backgroundImage: `url(${projectData.background})` }}
     >
       <div
-        className='bg-cover flex flex-col items-center justify-center'
-        style={{ backgroundPosition: 'center center' }}
+        className='p-4 sm:p-8 mt-8 w-full md:w-11/12'
+        style={{
+          backgroundColor: 'rgba(23, 10, 2, 0.8)',
+          borderRadius: '16px',
+          overflowX: 'auto',
+          overflowY: 'auto',
+        }}
       >
-        <div
-          className='p-8 mt-8 w-full md:w-5/6'
-          style={{
-            backgroundColor: 'rgba(23, 10, 2, 0.8)',
-            borderRadius: '16px',
-            overflowX: 'auto',
-            overflowY: 'auto',
-          }}
-        >
-          <div className='mb-6 font-skadi font-bold' style={{ fontSize: '32px', color: '#E0C685' }}>
-            ORDER HISTORY
-          </div>
-
-          <Table>
+        <div className='mb-6 font-skadi font-bold text-xl sm:text-3xl text-[#F5E6D5]'>ORDER HISTORY</div>
+        <TableContainer style={{ maxHeight: 300 }}>
+          <Table stickyHeader>
             <TableHead>
               <TableRow>
                 <TableCell>TRANSACTION ID</TableCell>
                 <TableCell>DATE</TableCell>
-                <TableCell>ITEM</TableCell>
-                <TableCell>PRICE</TableCell>
-                <TableCell>QUANTITY</TableCell>
-                <TableCell>AMOUNT</TableCell>
+                <TableCell>TOTAL VALUE</TableCell>
                 <TableCell>STATUS</TableCell>
               </TableRow>
             </TableHead>
@@ -77,38 +96,121 @@ const OokeengaINOOrder = () => {
                       <TableCell rowSpan={2}>
                         {DateTime.fromISO(item.order_time).toFormat('HH:mm dd/MM/yyyy')}
                       </TableCell>
-                      <TableCell>{item.product_name[0]}</TableCell>
                       <TableCell rowSpan={2}>
-                        {formatNumber(Math.round(item.product_price[0]))} {item.currency}
-                      </TableCell>
-                      <TableCell rowSpan={2}>{formatNumber(item.total_amount / item.product_price[0])}</TableCell>
-                      <TableCell rowSpan={2}>
-                        {formatNumber(item.total_amount)} {item.currency}
+                        <span className='font-black'>
+                          {formatNumber(item.total_amount)} {item.currency}
+                        </span>
                       </TableCell>
                       <TableCell rowSpan={2}>
                         <span
-                          className='text-white text-sm rounded px-4 py-1.5'
-                          style={{ backgroundColor: STATUS_MAP[item.status].color }}
+                          className='text-sm rounded-lg px-4 py-1.5'
+                          style={{
+                            backgroundColor: STATUS_MAP[item.status].color,
+                            color: STATUS_MAP[item.status].textColor,
+                          }}
                         >
                           {STATUS_MAP[item.status].name}
                         </span>
                       </TableCell>
                     </TableRow>
-                    <TableRow>
-                      {/* <TableCell>{item.product_name[1]}</TableCell>
-                    <TableCell>
-                      {formatNumber(item.product_price[1])} {item.currency}
-                    </TableCell>
-                    <TableCell>{item.product_quantity[1]}</TableCell> */}
-                    </TableRow>
+                    <TableRow></TableRow>
                   </React.Fragment>
                 );
               })}
             </TableBody>
           </Table>
-        </div>
+        </TableContainer>
       </div>
-    </div>
+      <div
+        className='p-4 sm:p-8 mt-8 w-full md:w-11/12 lg:w-6/12'
+        style={{
+          backgroundColor: 'rgba(23, 10, 2, 0.8)',
+          borderRadius: '16px',
+          overflowX: 'auto',
+          overflowY: 'auto',
+        }}
+      >
+        <div className='mb-6 font-skadi font-bold text-xl sm:text-3xl text-[#F5E6D5]'>Account Information</div>
+        <TableContainer style={{ maxHeight: 300 }} className=''>
+          <Table stickyHeader>
+            <TableHead>
+              <TableRow>
+                <TableCell>No.</TableCell>
+                <TableCell>USER NAME</TableCell>
+                <TableCell></TableCell>
+                <TableCell>PASSWORD</TableCell>
+                <TableCell></TableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {dataAccount.map((item, index) => {
+                return (
+                  <React.Fragment key={index}>
+                    <TableRow>
+                      <TableCell rowSpan={2}>
+                        <span>#{index}</span>
+                      </TableCell>
+                      <TableCell rowSpan={2} className='w-[130px]'>{item.username}</TableCell>
+                      <TableCell rowSpan={2}>
+                        <IconButton
+                          color='primary'
+                          onClick={() => {
+                            setOpenSnackBar(true);
+                            navigator.clipboard.writeText(item.username);
+                          }}
+                        >
+                          <ContentCopyIcon className='text-[#F5E6D5]' />
+                        </IconButton>
+                      </TableCell>
+                      <TableCell rowSpan={2} className='w-[130px]'>
+                        {isVisible ? (
+                          <span className='font-black'>{item.password}</span>
+                        ) : (
+                          <span className='font-black'>********</span>
+                        )}
+                      </TableCell>
+                      <TableCell rowSpan={2}>
+                        <IconButton
+                          color='primary'
+                          onClick={() => {
+                            setOpenSnackBar(true);
+                            navigator.clipboard.writeText(item.password);
+                          }}
+                        >
+                          <ContentCopyIcon className='text-[#F5E6D5]' />
+                        </IconButton>
+
+                        {isVisible ? (
+                          <IconButton color='primary' onClick={() => setIsVisible(false)}>
+                            <VisibilityOffIcon className='text-[#F5E6D5]' />
+                          </IconButton>
+                        ) : (
+                          <IconButton color='primary' onClick={() => setIsVisible(true)}>
+                            <VisibilityIcon className='text-[#F5E6D5]' />
+                          </IconButton>
+                        )}
+                      </TableCell>
+                    </TableRow>
+                    <TableRow></TableRow>
+                  </React.Fragment>
+                );
+              })}
+            </TableBody>
+          </Table>
+        </TableContainer>
+      </div>
+      <Snackbar
+        anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
+        onClose={handleClose}
+        open={openSnackBar}
+        autoHideDuration={2000}
+        message='Copied'
+      >
+        <Alert className='bg-[#463024] text-white' severity='success' sx={{ width: '100%' }}>
+          Copied
+        </Alert>
+      </Snackbar>
+    </Box>
   );
 };
 

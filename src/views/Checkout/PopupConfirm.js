@@ -2,6 +2,44 @@ import React, { memo, useCallback } from 'react';
 import { Button, Dialog, Typography } from '@mui/material';
 import { styled } from '@mui/system';
 import { DesignButton } from 'components';
+import { LoadingButton } from '@mui/lab';
+
+export const StyledButton = ({
+  design = 'linear-gradient(152.68deg, #E1A34F 16.58%, #A36C22 82.97%)',
+  size = 'medium',
+  disabled,
+  loading,
+  ...props
+}) => {
+  if (disabled) design = 'linear-gradient(152.68deg, #71604A 16.58%, #5B4B36 82.97%)';
+  return (
+    <LoadingButton
+      disabled={disabled}
+      fontFamily='Skranji'
+      sx={{
+        borderRadius: '8px',
+        background: design,
+        textShadow:
+          design === 'linear-gradient(152.68deg, #71604A 16.58%, #5B4B36 82.97%)'
+            ? '0px 2px 2px 0px #61412780'
+            : '0px 2px 2px rgba(97, 65, 39, 0.5)',
+
+        boxShadow: '0px 4px 32px rgba(68, 43, 23, 0.2), 0px 2px 4px rgba(68, 43, 23, 0.3)',
+        backgroundSize: '100% 100%',
+        fontFamily: 'Skranji',
+        color: design === 'linear-gradient(152.68deg, #71604A 16.58%, #5B4B36 82.97%)' ? '#7B6C5B' : '#FFEAD2',
+        paddingLeft: 2,
+        paddingRight: 2,
+        minWidth: 0,
+      }}
+      classes={{
+        sizeLarge: 'h-15 text-xl',
+        sizeMedium: 'h-11',
+      }}
+      {...props}
+    />
+  );
+};
 
 const NoButton = styled(Button)(({ theme }) => ({
   background: '#EBECF0',
@@ -57,12 +95,17 @@ export const PopupConfirm = memo(
           </p>
 
           <div className='mt-4 grid grid-flow-col gap-4'>
-            <DesignButton design='orange' size='large' onClick={onYes} style={{ fontSize: '20px',height: '100px', width: '160px' }}>
+            <StyledButton size='large' onClick={onYes} style={{ fontSize: '20px', height: '100px', width: '160px' }}>
               {yesBtnText}
-            </DesignButton>
-            <DesignButton design='green' size='large' onClick={onNo} style={{ fontSize: '20px',height: '100px', width: '160px' }}>
+            </StyledButton>
+            <StyledButton
+              design='linear-gradient(152.68deg, #776458 16.58%, #49382E 82.97%)'
+              size='large'
+              onClick={onNo}
+              style={{ fontSize: '20px', height: '100px', width: '160px' }}
+            >
               {noBtnText}
-            </DesignButton>
+            </StyledButton>
           </div>
         </div>
       </StyledDialog>
