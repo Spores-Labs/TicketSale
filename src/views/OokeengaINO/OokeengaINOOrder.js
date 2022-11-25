@@ -11,6 +11,7 @@ import {
   IconButton,
   Snackbar,
   Alert,
+  Container,
 } from '@mui/material';
 import { DateTime } from 'luxon';
 import { shorten } from 'utils/common';
@@ -53,13 +54,12 @@ const OokeengaINOOrder = () => {
     setOpenSnackBar(false);
   };
   return (
-    <Box
-      sx={{ flexGrow: 1 }}
-      className='bg-no-repeat bg-cover flex-1 flex items-center lg:items-start flex-col lg:pl-12'
+    <div
+      className='bg-no-repeat bg-cover flex items-center lg:items-start flex-col lg:pl-12 h-screen'
       style={{ backgroundImage: `url(${projectData.background})` }}
     >
       <div
-        className='p-4 sm:p-8 mt-8 w-full md:w-11/12'
+        className='p-4 sm:p-8 mt-8 w-full md:w-11/12 '
         style={{
           backgroundColor: 'rgba(23, 10, 2, 0.8)',
           borderRadius: '16px',
@@ -210,7 +210,7 @@ const OokeengaINOOrder = () => {
           Copied
         </Alert>
       </Snackbar>
-    </Box>
+    </div>
   );
 };
 
