@@ -68,8 +68,8 @@ const OokeengaINOOrder = () => {
         }}
       >
         <div className='mb-6 font-skadi font-bold text-xl sm:text-3xl text-[#F5E6D5]'>ORDER HISTORY</div>
-        <TableContainer style={{ maxHeight: 300 }}>
-          <Table stickyHeader>
+        <TableContainer>
+          <Table>
             <TableHead>
               <TableRow>
                 <TableCell>TRANSACTION ID</TableCell>
@@ -131,8 +131,8 @@ const OokeengaINOOrder = () => {
         }}
       >
         <div className='mb-6 font-skadi font-bold text-xl sm:text-3xl text-[#F5E6D5]'>Account Information</div>
-        <TableContainer style={{ maxHeight: 300 }} className=''>
-          <Table stickyHeader>
+        <TableContainer className=''>
+          <Table>
             <TableHead>
               <TableRow>
                 <TableCell>No.</TableCell>

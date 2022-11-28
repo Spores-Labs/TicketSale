@@ -329,7 +329,7 @@ function OokeengaINORightCard({ time }) {
   return (
     <div>
       <div
-        className='p-3 sm:p-7 rounded-lg'
+        className='p-3 sm:p-7 rounded-lg backdrop-blur-[10px]'
         style={{
           background: 'linear-gradient(132.01deg, rgba(188, 142, 106, 0.6) 20.54%, rgba(104, 64, 32, 0.6) 79.14%)',
           color: '#F5E6D5',
@@ -388,7 +388,7 @@ function OokeengaINORightCard({ time }) {
       </div>
       {isStarted && isLoggedIn && !isFinished && !isSoldOut ? (
         <div
-          className='p-3 sm:p-7 mt-4 rounded-lg'
+          className='p-3 sm:p-7 mt-4 rounded-lg backdrop-blur-[10px]'
           style={{
             background: 'linear-gradient(132.01deg, rgba(188, 142, 106, 0.6) 20.54%, rgba(104, 64, 32, 0.6) 79.14%)',
             color: '#F5E6D5',
