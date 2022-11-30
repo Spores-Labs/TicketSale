@@ -53,9 +53,9 @@ const OokeengaINOOrder = () => {
     setOpenSnackBar(false);
   };
   return (
-    <Box
+    <div
       sx={{ flexGrow: 1 }}
-      className='bg-no-repeat bg-cover flex-1 flex items-center lg:items-start flex-col lg:pl-12'
+      className='bg-no-repeat bg-cover flex-1 flex items-center lg:items-start flex-col lg:pl-12 h-screen'
       style={{ backgroundImage: `url(${projectData.background})` }}
     >
       <div
@@ -210,7 +210,7 @@ const OokeengaINOOrder = () => {
           Copied
         </Alert>
       </Snackbar>
-    </Box>
+    </div>
   );
 };
 

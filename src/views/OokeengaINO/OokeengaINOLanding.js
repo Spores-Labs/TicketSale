@@ -48,7 +48,7 @@ const OokeengaINOLanding = () => {
           </Grid>
           <Grid item md={12} lg={8} xl={8}>
             <div
-              className='bg-no-repeat bg-center md:bg-top bg-cover md:bg-contain px-8 sm:px-20 md:px-36 pt-8 pb-60 md:pb-[500px]'
+              className='bg-no-repeat bg-center md:bg-top bg-cover px-8 sm:px-20 md:px-36 pt-8 pb-60 md:pb-[500px]'
               style={{ backgroundImage: `url(${projectData.infoBackground})`, backgroundSize: '100% 100% !important' }}
             >
               <OokeengaINOInventory />
