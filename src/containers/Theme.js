@@ -24,11 +24,6 @@ export const appTheme = createTheme({
       },
     },
     MuiContainer: {
-      styleOverrides: {
-        maxWidthLg: {
-          maxWidth: 'calc(1280px + 48px) !important',
-        },
-      },
     },
     MuiButton: {
       defaultProps: {

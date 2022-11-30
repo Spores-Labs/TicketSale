@@ -18,6 +18,7 @@ export const projectData = {
   addressReceiver: process.env.REACT_APP_ADDRESS_RECEIVER,
   image: `${process.env.PUBLIC_URL}/assets/imgs/projects/image.png`,
   background: `${process.env.PUBLIC_URL}/assets/imgs/projects/background.png`,
+  backgroundBlur: `${process.env.PUBLIC_URL}/assets/imgs/projects/background-blur.png`,
   infoBackground: `${process.env.PUBLIC_URL}/assets/imgs/projects/paperBackground.png`,
   banner: `${process.env.PUBLIC_URL}/assets/imgs/projects/banner.png`,
   bigBanner: `${process.env.PUBLIC_URL}/assets/imgs/projects/big-banner.png`,

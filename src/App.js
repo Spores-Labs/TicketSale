@@ -8,6 +8,7 @@ import { SnackbarProvider } from 'notistack';
 import { store } from 'reducers';
 import { queryClient } from 'services/client';
 import { ServicesContextProvider } from 'services/ServicesContext';
+import OokeengaINORestricted from 'views/OokeengaINO/OokeengaINORestricted';
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
               <ServicesContextProvider>
                 <AppController>
                   <Switch>
+                    <Route path='/vn' component={OokeengaINORestricted} />
                     <Route path='/' component={PrivateLayout} />
                   </Switch>
                 </AppController>
