@@ -1,0 +1,47 @@
+name: deploy_production
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+      - master
+env:
+  PAGE_PROJECT_NAME: ticksale
+jobs:
+  build-publish:
+    name: build and publish
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        name: Checkout
+      - name: setup NodeJS
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16.x'
+      - name: get npm cache directory
+        id: npm-cache-dir
+        run: |
+          echo "npm_cache_dir=$(npm config get cache)" >> $GITHUB_ENV
+      - uses: actions/cache@v3
+        id: npm-cache
+        with:
+          path: ${{ env.npm_cache_dir }}
+          key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+      - name: install deps
+        run: npm install --legacy-peer-deps
+      - name: Build
+        env:
+          REACT_APP_API_URL: https://api-lp1.spores.dev/v1/tickets
+          REACT_APP_BASE_API_URL: https://api-lp1.spores.dev/v1
+          REACT_APP_ADDRESS_RECEIVER: 0x063E6329BDeA016e110dcBCA76A24c0F50b13e38
+          REACT_APP_NETWORK_CHAIN_IDS: 0x61
+        run: |
+          npm run build
+      - name: deploy Cloudflare Pages
+        uses: cloudflare/wrangler-action@2.0.0
+        with:
+          apiToken: ${{ secrets.CF_API_KEY }}
+          accountId: ${{ secrets.CF_ACCOUNT_ID }}
+          command: pages publish build --project-name=$PAGE_PROJECT_NAME --commit-dirty=true --branch=main
