@@ -33,10 +33,10 @@ jobs:
         run: npm install --legacy-peer-deps
       - name: Build
         env:
-          REACT_APP_API_URL: https://api-lp1.spores.dev/v1/tickets
-          REACT_APP_BASE_API_URL: https://api-lp1.spores.dev/v1
+          REACT_APP_API_URL: https://api.okglabs.com/v1/tickets
+          REACT_APP_BASE_API_URL: https://api.okglabs.com/v1
           REACT_APP_ADDRESS_RECEIVER: '0x063E6329BDeA016e110dcBCA76A24c0F50b13e38'
-          REACT_APP_NETWORK_CHAIN_IDS: '0x61'
+          REACT_APP_NETWORK_CHAIN_IDS: '0x38'
           CI: false
         run: |
           npm run build
