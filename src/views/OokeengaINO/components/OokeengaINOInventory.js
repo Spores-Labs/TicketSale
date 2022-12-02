@@ -186,8 +186,8 @@ const OokeengaINOInventory = () => {
         </span>
         <div className='mb-4'>
           Register and Purchase Ticket at: ​
-          <MuiLink className='hover:underline' style={{ color: '#B74404' }} href='https://okglabs.com/ticket'>
-            ​okglabs.com/ticket.
+          <MuiLink className='hover:underline' style={{ color: '#B74404' }} href='https://okglabs.com/tickets'>
+            ​okglabs.com/tickets.
           </MuiLink>{' '}
           Registration will be closed at 12 AM UTC, Sunday 11 December.
         </div>
