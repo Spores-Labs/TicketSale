@@ -197,28 +197,28 @@ const OokeengaINOInventory = () => {
         <ul className='list-disc list-outside ml-5 mb-4'>
           <li className=''>
             Practice playing Free Version now at{' '}
-            <MuiLink className='hover:underline' style={{ color: '#B74404' }} href='play.ookeenga.io'>
-              play.ookeenga.io.
+            <MuiLink className='hover:underline' style={{ color: '#B74404' }} href='https://play.ookeenga.io/'>
+              play.ookeenga.io
             </MuiLink>
             .
           </li>
           <li className=''>
             Find out all information and suggested strategies for your Troop Cards and Spell Cards at{' '}
-            <MuiLink className='hover:underline' style={{ color: '#B74404' }} href='play.ookeenga.io'>
+            <MuiLink className='hover:underline' style={{ color: '#B74404' }} href='https://ookeenga.fandom.com/wiki/Ookeenga_Wiki'>
               Ookeenga Wiki
             </MuiLink>
             .
           </li>
           <li className=''>
             Watch{' '}
-            <MuiLink className='hover:underline' style={{ color: '#B74404' }} href='play.ookeenga.io'>
+            <MuiLink className='hover:underline' style={{ color: '#B74404' }} href='https://www.youtube.com/playlist?list=PLxWky5BSAGEW9meZCYxEdxwRP-ofRdUKc'>
               Walkthrough Tutorial
             </MuiLink>{' '}
             for PvE Maps
           </li>
           <li className=''>
             Join our{' '}
-            <MuiLink className='hover:underline' style={{ color: '#B74404' }} href='play.ookeenga.io'>
+            <MuiLink className='hover:underline' style={{ color: '#B74404' }} href='https://dsc.gg/ookeenga'>
               Discord
             </MuiLink>{' '}
             for discussion on Gameplay and Weekly Livestream on Ookeenga Playing Tips.
