@@ -23,7 +23,7 @@ const OokeengaINOInventory = () => {
 
       <div className='flex justify-between items-start md:text-left p-2 md:px-6 md:py-4 bg-[#E6BA93] border-[1px] border-[#B37553] rounded-t-2xl font-medium'>
         <div className='font-medium text-sm md:text-base text-[#481A00]'>From</div>
-        <div className='font-bold text-right text-[#5C1710] text-sm md:text-base'>05 Dec 2022, 02:00 AM UTC</div>
+        <div className='font-bold text-right text-[#5C1710] text-sm md:text-base'>10 Dec 2022, 02:00 AM UTC</div>
       </div>
       <div className='flex justify-between items-start md:text-left p-2 md:px-6 md:py-4 bg-[#E6BA93] border-x-[1px] border-[#B37553] font-medium'>
         <div className='font-medium text-sm md:text-base text-[#481A00]'>To</div>
@@ -76,6 +76,28 @@ const OokeengaINOInventory = () => {
         <span className='font-extrabold mb-2 text-sm md:text-base'>Limit of participants</span>
         <ul className='list-disc list-outside ml-5 mb-4'>
           <li className=''>No limit</li>
+        </ul>
+
+        <span className='font-extrabold mb-2 text-sm md:text-base'>Date and Time</span>
+        <ul className='list-disc list-outside ml-5 mb-4'>
+          <li className=''>10 AM - 12 PM UTC, 17 December 2022.</li>
+        </ul>
+
+        <span className='font-extrabold mb-2 text-sm md:text-base'>Champion League Venue:</span>
+        <ul className='list-disc list-outside ml-5 mb-4'>
+          <li className=''>
+            The Champion League will take place in a downloadable version specially created for this event. The link to
+            download Champion League Version will be sent to participants via registered emails.
+          </li>
+          <li className=''>
+            Please note that the downloadable version is only for Champion League. Players won’t be able to login to
+            that version before the starting time of the event. If you wish to practice playing Ookeenga, you may start
+            training by playing the Free Version at{' '}
+            <MuiLink className='hover:underline' style={{ color: '#B74404' }} href='https://play.ookeenga.io/'>
+              {' '}
+              play.ookeenga.io
+            </MuiLink>
+          </li>
         </ul>
 
         <span className='font-extrabold mb-2 text-sm md:text-base'>
@@ -204,14 +226,22 @@ const OokeengaINOInventory = () => {
           </li>
           <li className=''>
             Find out all information and suggested strategies for your Troop Cards and Spell Cards at{' '}
-            <MuiLink className='hover:underline' style={{ color: '#B74404' }} href='https://ookeenga.fandom.com/wiki/Ookeenga_Wiki'>
+            <MuiLink
+              className='hover:underline'
+              style={{ color: '#B74404' }}
+              href='https://ookeenga.fandom.com/wiki/Ookeenga_Wiki'
+            >
               Ookeenga Wiki
             </MuiLink>
             .
           </li>
           <li className=''>
             Watch{' '}
-            <MuiLink className='hover:underline' style={{ color: '#B74404' }} href='https://www.youtube.com/playlist?list=PLxWky5BSAGEW9meZCYxEdxwRP-ofRdUKc'>
+            <MuiLink
+              className='hover:underline'
+              style={{ color: '#B74404' }}
+              href='https://www.youtube.com/playlist?list=PLxWky5BSAGEW9meZCYxEdxwRP-ofRdUKc'
+            >
               Walkthrough Tutorial
             </MuiLink>{' '}
             for PvE Maps
