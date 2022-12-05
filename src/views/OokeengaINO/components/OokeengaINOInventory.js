@@ -49,7 +49,7 @@ const OokeengaINOInventory = () => {
           <li className='mb-4'>Champions will receive rewards within one week after the Leaderboard is announced.</li>
           <li className='mb-4'>
             The Prize Pool takes 70% of all the Ticket Purchase and will be distributed to the Top 20% Winners of the
-            Champion League. The exact number of prizes will be announced after Registration Closed on December 11.
+            Champion League. The exact number of prizes will be announced after Registration Closed on December 17.
           </li>
         </ul>
       </div>
@@ -177,7 +177,7 @@ const OokeengaINOInventory = () => {
         <ul className='list-disc list-outside ml-5 mb-4'>
           <li className=''>
             The Prize Pool takes 70% of all the Ticket Purchase and will be distributed to the Top 20% Winners of the
-            Champion League. The exact number of prizes will be announced after Registration Closed on December 11.
+            Champion League. The exact number of prizes will be announced after Registration Closed on December 17.
           </li>
         </ul>
 
@@ -189,7 +189,7 @@ const OokeengaINOInventory = () => {
           <MuiLink className='hover:underline' style={{ color: '#B74404' }} href='https://okglabs.com/tickets'>
             ​okglabs.com/tickets.
           </MuiLink>{' '}
-          Registration will be closed at 12 AM UTC, Sunday 11 December.
+          Registration will be closed at 12 AM UTC, Saturday 17 December.
         </div>
 
         <span className='font-extrabold mb-2 text-sm md:text-base'>How to win in Ookeenga Champion League?</span>
