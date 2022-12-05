@@ -14,7 +14,7 @@ const OokeengaINOInventory = () => {
       </div>
 
       <span
-        className='text-md md:text-2xl text-left flex items-center mt-2 md:mt-6 mb-2'
+        className='text-md md:text-2xl text-left flex items-center mt-2 md:mt-8 mb-2'
         style={{ fontFamily: 'Skranji' }}
       >
         <img className='mr-2' src={require('assets/projects/ticketIcon.png')} />
@@ -35,7 +35,7 @@ const OokeengaINOInventory = () => {
       </div>
 
       <span
-        className='text-md md:text-2xl text-left flex items-center mt-2 md:mt-6 mb-2'
+        className='text-md md:text-2xl text-left flex items-center mt-2 md:mt-8 mb-2'
         style={{ fontFamily: 'Skranji' }}
       >
         <img className='mr-2' src={require('assets/projects/trophyIcon.png')} />
@@ -43,11 +43,11 @@ const OokeengaINOInventory = () => {
       </span>
       <div className='p-2 md:p-5 bg-[#E6BA93] text-[#481A00] border-[1px] border-[#B37553] rounded-2xl font-medium mb-2 text-sm md:text-base'>
         <ul className='list-disc list-outside ml-5'>
-          <li className='mb-4'>
+          <li className=''>
             The rewards will be paid in OKG based on the equivalent exchange rate at the payout time.
           </li>
-          <li className='mb-4'>Champions will receive rewards within one week after the Leaderboard is announced.</li>
-          <li className='mb-4'>
+          <li className=''>Champions will receive rewards within one week after the Leaderboard is announced.</li>
+          <li className=''>
             The Prize Pool takes 70% of all the Ticket Purchase and will be distributed to the Top 20% Winners of the
             Champion League. The exact number of prizes will be announced after Registration Closed on December 17.
           </li>
@@ -114,7 +114,7 @@ const OokeengaINOInventory = () => {
       </div>
 
       <span
-        className='text-md md:text-2xl text-left flex items-center mt-2 md:mt-6 mb-2'
+        className='text-md md:text-2xl text-left flex items-center mt-2 md:mt-8 mb-2'
         style={{ fontFamily: 'Skranji' }}
       >
         <img className='mr-2' src={require('assets/projects/rankingIcon.png')} />
@@ -123,11 +123,11 @@ const OokeengaINOInventory = () => {
       <div className='p-2 md:p-5 bg-[#E6BA93] border-[1px] border-[#B37553] rounded-2xl font-medium mb-6 text-sm md:text-base'>
         <span className='mb-4'>The Ranks on the Champion League Leaderboard are based on the following criteria:</span>
         <ul className='list-disc list-outside ml-5'>
-          <li className='mb-4'>The number of stars a player gets in 10 playing turns.</li>
-          <li className='mb-4'>
+          <li className=''>The number of stars a player gets in 10 playing turns.</li>
+          <li className=''>
             If two players have equal numbers of stars, the player at the lower stages will get a higher rank.
           </li>
-          <li className='mb-4'>
+          <li className=''>
             If two players have equal numbers of stars and are at the same stage, the player who clears the stages in
             less time will get a higher rank.
           </li>
@@ -135,7 +135,7 @@ const OokeengaINOInventory = () => {
       </div>
 
       <span
-        className='text-md md:text-2xl text-left flex items-center mt-2 md:mt-6 mb-2'
+        className='text-md md:text-2xl text-left flex items-center mt-2 md:mt-8 mb-2'
         style={{ fontFamily: 'Skranji' }}
       >
         <img className='mr-2' src={require('assets/projects/faq.png')} />
