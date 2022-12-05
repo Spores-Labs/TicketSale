@@ -23,7 +23,7 @@ const OokeengaINOInventory = () => {
 
       <div className='flex justify-between items-start md:text-left p-2 md:px-6 md:py-4 bg-[#E6BA93] border-[1px] border-[#B37553] rounded-t-2xl font-medium'>
         <div className='font-medium text-sm md:text-base text-[#481A00]'>From</div>
-        <div className='font-bold text-right text-[#5C1710] text-sm md:text-base'>03 Dec 2022, 02:00 AM UTC</div>
+        <div className='font-bold text-right text-[#5C1710] text-sm md:text-base'>05 Dec 2022, 02:00 AM UTC</div>
       </div>
       <div className='flex justify-between items-start md:text-left p-2 md:px-6 md:py-4 bg-[#E6BA93] border-x-[1px] border-[#B37553] font-medium'>
         <div className='font-medium text-sm md:text-base text-[#481A00]'>To</div>
