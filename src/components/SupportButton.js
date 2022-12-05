@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import { Link as MuiLink } from '@mui/material';
 
-export const SupportButton = memo(({ supportUrl = 'https://t.me/ookeenga_global' }) => {
+export const SupportButton = memo(({ supportUrl = 'https://t.me/+_q6TJ9OCANFlNzI1' }) => {
   return (
     <div
       style={{
