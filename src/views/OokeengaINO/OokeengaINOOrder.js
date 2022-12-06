@@ -148,7 +148,7 @@ const OokeengaINOOrder = () => {
                   <React.Fragment key={index}>
                     <TableRow>
                       <TableCell rowSpan={2}>
-                        <span>#{index}</span>
+                        <span>#{index+1}</span>
                       </TableCell>
                       <TableCell rowSpan={2} className='w-[130px]'>{item.username}</TableCell>
                       <TableCell rowSpan={2}>
