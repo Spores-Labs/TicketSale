@@ -26,7 +26,7 @@ const OokeengaINOLanding = () => {
       className='bg-no-repeat bg-fixed'
       style={{ backgroundImage: `url(${projectData.background})`, backgroundSize: '100% 100%' }}
     >
-      {/* <SupportButton /> */}
+      <SupportButton />
       <div
         className='p-4 px-0 lg:px-20 lg:pt-8 flex flex-col items-center justify-center'
         style={{
