@@ -35,8 +35,8 @@ jobs:
         env:
           REACT_APP_API_URL: https://api.okglabs.com/v1/tickets
           REACT_APP_BASE_API_URL: https://api.okglabs.com/v1
-          REACT_APP_ADDRESS_RECEIVER: '0xCA750911F557e82Ae8a206750b1B003Ee10802Ed'
-          REACT_APP_NETWORK_CHAIN_IDS: '0x38'
+          REACT_APP_ADDRESS_RECEIVER: '0x063E6329BDeA016e110dcBCA76A24c0F50b13e38'
+          REACT_APP_NETWORK_CHAIN_IDS: '0x61'
           CI: false
         run: |
           npm run build
