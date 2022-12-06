@@ -80,7 +80,7 @@ const OokeengaINOInventory = () => {
 
         <span className='font-extrabold mb-2 text-sm md:text-base'>Date and Time</span>
         <ul className='list-disc list-outside ml-5 mb-4'>
-          <li className=''>10 AM - 02 AM UTC, 17 December 2022.</li>
+          <li className=''>10 AM - 12 PM UTC, 17 December 2022.</li>
         </ul>
 
         <span className='font-extrabold mb-2 text-sm md:text-base'>Champion League Venue:</span>
