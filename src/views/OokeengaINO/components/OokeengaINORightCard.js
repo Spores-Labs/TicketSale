@@ -406,7 +406,7 @@ function OokeengaINORightCard({ time }) {
               <div className='flex flex-col justify-between'>
                 <span className='text-[#FFEAD2] text-md md:text-lg'>Champion League Ticket</span>
                 <div className='flex gap-2 items-center'>
-                  <span className='text-[#FFEAD2] font-extrabold'>{Math.round(product?.price[0]?.price)} OKG</span>
+                  <span className='text-[#FFEAD2] font-extrabold'>{Math.round(product?.prices[0]?.price)} OKG</span>
                 </div>
               </div>
             </div>
