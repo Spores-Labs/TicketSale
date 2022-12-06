@@ -129,7 +129,7 @@ const OokeengaINOInventory = () => {
           <li className=''>Each player has 10 playing turns in the Champion League.</li>
           <li className=''>All players start at the same stage chosen by the Champion League organizer.</li>
           <li className=''>
-            The Champion League will open from 10 AM - 02 AM UTC. The Leaderboard will be ranked based on the games
+            The Champion League will open from 10 AM - 12 PM UTC. The Leaderboard will be ranked based on the games
             played during this time.
           </li>
         </ul>
