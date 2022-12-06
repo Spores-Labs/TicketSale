@@ -262,15 +262,15 @@ function OokeengaINORightCard({ time }) {
   const [isEnoughBalance, setIsEnoughBalance] = React.useState(true);
 
   const [debouncedAmounts] = useDebounce(amounts, 500);
-  
+
   const checkBalance = useCallback(async () => {
     if (!currentPrice) return;
     const { payment_token } = currentPrice;
     const balance = payment_token?.address
       ? await erc20Contract(payment_token.address).methods.balanceOf(address).call()
       : await web3.eth.getBalance(address);
-    
-      console.log(web3.eth)
+
+    console.log(web3.eth);
     const isEnough = Number(balance) >= totalPrice * 10 ** (payment_token.decimal || 18);
     return isEnough;
   }, [address, currentPrice, totalPrice]);
@@ -413,7 +413,7 @@ function OokeengaINORightCard({ time }) {
 
             <div className='flex justify-between items-center text-white mt-6 mb-6'>
               <span className='' style={{ color: '#CAA57B' }}>
-                Quantity
+                Number of Ticket(s)
               </span>
               <div
                 className='flex items-center rounded p-1'

@@ -27,9 +27,9 @@ const OokeengaINOInventory = () => {
       </div>
       <div className='flex justify-between items-start md:text-left p-2 md:px-6 md:py-4 bg-[#E6BA93] border-x-[1px] border-[#B37553] font-medium'>
         <div className='font-medium text-sm md:text-base text-[#481A00]'>To</div>
-        <div className='font-bold text-right text-[#5C1710] text-sm md:text-base'>17 Dec 2022, 12:00 AM UTC</div>
+        <div className='font-bold text-right text-[#5C1710] text-sm md:text-base'>17 Dec 2022, 02:00 AM UTC</div>
       </div>
-      <div className='flex justify-between items-start md:text-left p-2 md:px-6 md:py-45 bg-[#E6BA93] border-[1px] border-[#B37553] rounded-b-2xl font-medium'>
+      <div className='flex justify-between items-start md:text-left p-2 md:px-6 md:py-4 bg-[#E6BA93] border-[1px] border-[#B37553] rounded-b-2xl font-medium'>
         <div className='font-medium text-sm md:text-base text-[#481A00]'>Ticket Price</div>
         <div className='font-bold text-right text-[#5C1710] text-sm md:text-base'>$5, purchased in OKG</div>
       </div>
@@ -56,9 +56,9 @@ const OokeengaINOInventory = () => {
 
       <span className='text-md md:text-2xl text-left flex items-center mt-6 mb-2' style={{ fontFamily: 'Skranji' }}>
         <img className='mr-2' src={require('assets/projects/ruleBookIcon.png')} />
-        CHAMPION LEAGUE INFORMATION
+        Champion League Information
       </span>
-      <div className='p-2 md:p-5 bg-[#E6BA93] border-[1px] border-[#B37553] rounded-2xl font-medium mb-6 text-sm md:text-base'>
+      <div className='p-2 md:p-5 bg-[#E6BA93] border-[1px] border-[#B37553] rounded-2xl font-medium text-sm md:text-base'>
         <span className='font-extrabold mb-2 text-sm md:text-base'>Organizer</span>
         <ul className='list-disc list-outside ml-5 mb-4'>
           <li className=''>Ookeenga Lab</li>
@@ -80,7 +80,7 @@ const OokeengaINOInventory = () => {
 
         <span className='font-extrabold mb-2 text-sm md:text-base'>Date and Time</span>
         <ul className='list-disc list-outside ml-5 mb-4'>
-          <li className=''>10 AM - 12 PM UTC, 17 December 2022.</li>
+          <li className=''>10 AM - 02 AM UTC, 17 December 2022.</li>
         </ul>
 
         <span className='font-extrabold mb-2 text-sm md:text-base'>Champion League Venue:</span>
@@ -129,7 +129,7 @@ const OokeengaINOInventory = () => {
           <li className=''>Each player has 10 playing turns in the Champion League.</li>
           <li className=''>All players start at the same stage chosen by the Champion League organizer.</li>
           <li className=''>
-            The Champion League will open from 10 AM - 12 PM UTC. The Leaderboard will be ranked based on the games
+            The Champion League will open from 10 AM - 02 AM UTC. The Leaderboard will be ranked based on the games
             played during this time.
           </li>
         </ul>
@@ -142,7 +142,7 @@ const OokeengaINOInventory = () => {
         <img className='mr-2' src={require('assets/projects/rankingIcon.png')} />
         Ranking System
       </span>
-      <div className='p-2 md:p-5 bg-[#E6BA93] border-[1px] border-[#B37553] rounded-2xl font-medium mb-6 text-sm md:text-base'>
+      <div className='p-2 md:p-5 bg-[#E6BA93] border-[1px] border-[#B37553] rounded-2xl font-medium text-sm md:text-base'>
         <span className='mb-4'>The Ranks on the Champion League Leaderboard are based on the following criteria:</span>
         <ul className='list-disc list-outside ml-5'>
           <li className=''>The number of stars a player gets in 10 playing turns.</li>
@@ -163,7 +163,7 @@ const OokeengaINOInventory = () => {
         <img className='mr-2' src={require('assets/projects/faq.png')} />
         FAQ
       </span>
-      <div className='p-2 md:p-5 bg-[#E6BA93] border-[1px] border-[#B37553] rounded-2xl font-medium mb-6 text-sm md:text-base'>
+      <div className='p-2 md:p-5 bg-[#E6BA93] border-[1px] border-[#B37553] rounded-2xl font-medium text-sm md:text-base'>
         <span className='font-extrabold mb-2 text-sm md:text-base'>What is Ookeenga Champion League?</span>
         <ul className='list-disc list-outside ml-5 mb-4'>
           <li className=''>
@@ -211,7 +211,7 @@ const OokeengaINOInventory = () => {
           <MuiLink className='hover:underline' style={{ color: '#B74404' }} href='https://okglabs.com/tickets'>
             ​okglabs.com/tickets.
           </MuiLink>{' '}
-          Registration will be closed at 12 AM UTC, Saturday 17 December.
+          Registration will be closed at 02 AM UTC, Saturday 17 December.
         </div>
 
         <span className='font-extrabold mb-2 text-sm md:text-base'>How to win in Ookeenga Champion League?</span>
