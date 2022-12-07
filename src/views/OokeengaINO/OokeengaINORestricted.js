@@ -10,7 +10,7 @@ const OokeengaINORestricted = () => {
     >
       <div style={{ border: '1px solid #53443C', background: 'rgba(23, 10, 2, 0.8)' }} className='py-9 px-18 sm:px-14 flex flex-col justify-center item-center gap-1 rounded-[10px]'>
         <div className='font-skadi font-bold text-2xl text-[#F1E9DC] flex justify-center'>Oops!</div>
-        <div className='text-[#DEC5AD] font-normal'>This Champion League is restricted in Vietnam</div>
+        <div className='text-[#DEC5AD] font-normal'>This Champion League is restricted in your country</div>
       </div>
     </div>
   );
