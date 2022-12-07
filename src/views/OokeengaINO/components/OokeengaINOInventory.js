@@ -91,12 +91,7 @@ const OokeengaINOInventory = () => {
           </li>
           <li className=''>
             Please note that the downloadable version is only for Champion League. Players won’t be able to login to
-            that version before the starting time of the event. If you wish to practice playing Ookeenga, you may start
-            training by playing the Free Version at{' '}
-            <MuiLink className='hover:underline' style={{ color: '#B74404' }} href='https://play.ookeenga.io/'>
-              {' '}
-              play.ookeenga.io
-            </MuiLink>
+            that version before the starting time of the event.
           </li>
         </ul>
 
@@ -150,8 +145,9 @@ const OokeengaINOInventory = () => {
             If two players have equal numbers of stars, the player at the lower stages will get a higher rank.
           </li>
           <li className=''>
-            If two players have equal numbers of stars and are at the same stage, the player who clears the stages in
-            less time will get a higher rank.
+            If two players have equal numbers of stars and are at the same stage, the player who has a lower Battle Time
+            in will get a higher rank. The Battle Time is based on the time the player spends on combats. The time the
+            player spends outside the combats doesn’t affect the Ranking.
           </li>
         </ul>
       </div>
