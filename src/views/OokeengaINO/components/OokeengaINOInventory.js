@@ -31,7 +31,7 @@ const OokeengaINOInventory = () => {
       </div>
       <div className='flex justify-between items-start md:text-left p-2 md:px-6 md:py-4 bg-[#E6BA93] border-[1px] border-[#B37553] rounded-b-2xl font-medium'>
         <div className='font-medium text-sm md:text-base text-[#481A00]'>Ticket Price</div>
-        <div className='font-bold text-right text-[#5C1710] text-sm md:text-base'>$5, purchased in OKG</div>
+        <div className='font-bold text-right text-[#5C1710] text-sm md:text-base'>$1, purchased in OKG</div>
       </div>
 
       <span
@@ -48,9 +48,10 @@ const OokeengaINOInventory = () => {
           </li>
           <li className=''>Champions will receive rewards within one week after the Leaderboard is announced.</li>
           <li className=''>
-            The Prize Pool takes 70% of all the Ticket Purchase and will be distributed to the Top 20% Winners of the
-            Champion League. The exact number of prizes will be announced after Registration Closed on December 17.
+            The Prize Pool takes 70% of all the Ticket Purchase and will be distributed to the Top 30% Winners of the
+            Champion League. 40 lucky players who didn't make it to the Top 30% winners will receive 1 NFT.
           </li>
+          <li className=''>The exact number of prizes will be announced after Registration Closed on December 17.</li>
         </ul>
       </div>
 
