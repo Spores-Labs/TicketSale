@@ -81,7 +81,7 @@ const OokeengaINOInventory = () => {
 
         <span className='font-extrabold mb-2 text-sm md:text-base'>Date and Time</span>
         <ul className='list-disc list-outside ml-5 mb-4'>
-          <li className=''>10 AM - 12 PM UTC, 17 December 2022.</li>
+          <li className=''>9 AM - 3 PM, 17 December 2022.</li>
         </ul>
 
         <span className='font-extrabold mb-2 text-sm md:text-base'>Champion League Venue:</span>
@@ -122,10 +122,10 @@ const OokeengaINOInventory = () => {
             in-game items, EXP and gKAB. You may swap heroes and cards from that inventory only. You may upgrade heroes
             and use given items to optimize their strategy for the game.
           </li>
-          <li className=''>Each player has 10 playing turns in the Champion League.</li>
+          <li className=''>Each player has 20 playing turns in the Champion League.</li>
           <li className=''>All players start at the same stage chosen by the Champion League organizer.</li>
           <li className=''>
-            The Champion League will open from 10 AM - 12 PM UTC. The Leaderboard will be ranked based on the games
+            The Champion League will open from 9 AM - 3 PM. The Leaderboard will be ranked based on the games
             played during this time.
           </li>
         </ul>
@@ -165,8 +165,8 @@ const OokeengaINOInventory = () => {
         <ul className='list-disc list-outside ml-5 mb-4'>
           <li className=''>
             Ookeenga Champion League is an event for every gamer as players won’t need NFT to play. Champion League
-            participants will play in a random PvE map picked by the Host. 30 Champions will be ranked in the
-            Leaderboard based on the ranking system of PvE.
+            participants will play in a random PvE map picked by the Host. Top 30% players on Leaderboard will be the
+            Champion and bring home the OKG rewards. The rest will receive 1 NFT Hero.
           </li>
         </ul>
 
