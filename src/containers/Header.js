@@ -59,6 +59,13 @@ const Header = () => {
             >
               Get OKG
             </MuiLink>
+            <MuiLink
+              href='https://drive.google.com/drive/folders/1AZ2BwPv1OkLEq6SwNOouCmSbd9wUuZh2'
+              className='sm:inline hidden hover:text-white mr-8 font-bold text-md'
+              style={{ color: '#B7A284' }}
+            >
+              Download
+            </MuiLink>
             <div className='flex items-center'>
               {!isLoggedIn ? (
                 <ConnectButton onClick={onConnectWallet}>Connect wallet</ConnectButton>

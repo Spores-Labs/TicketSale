@@ -21,6 +21,7 @@ import { useSelector } from 'react-redux';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
+import { Link as MuiLink } from '@mui/material';
 
 const STATUS_MAP = {
   1: { name: 'PENDING', color: '#564A26', textColor: '#FFD65B' },
@@ -148,9 +149,11 @@ const OokeengaINOOrder = () => {
                   <React.Fragment key={index}>
                     <TableRow>
                       <TableCell rowSpan={2}>
-                        <span>#{index+1}</span>
+                        <span>#{index + 1}</span>
                       </TableCell>
-                      <TableCell rowSpan={2} className='w-[130px]'>{item.username}</TableCell>
+                      <TableCell rowSpan={2} className='w-[130px]'>
+                        {item.username}
+                      </TableCell>
                       <TableCell rowSpan={2}>
                         <IconButton
                           color='primary'
@@ -210,6 +213,17 @@ const OokeengaINOOrder = () => {
           Copied
         </Alert>
       </Snackbar>
+      <span className='text-[#F5E6D5] font-thin italic mt-6'>
+        Ookeenga Champion League will take place in a downloadable version.{' '}
+        <MuiLink
+          className='hover:underline'
+          style={{ color: '#B74404' }}
+          href='https://drive.google.com/drive/folders/1AZ2BwPv1OkLEq6SwNOouCmSbd9wUuZh2'
+        >
+          {' '}
+          Install the PC version here.
+        </MuiLink>
+      </span>
     </div>
   );
 };
