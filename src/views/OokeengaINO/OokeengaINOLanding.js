@@ -43,9 +43,9 @@ const OokeengaINOLanding = () => {
             maxWidth: '1500px',
           }}
         >
-          <Grid item xs={12} md={12} lg={4} xl={4} className='xl:sticky top-1'>
+          {/* <Grid item xs={12} md={12} lg={4} xl={4} className='xl:sticky top-1'>
             <OokeengaINORightCard time={receivedTimeFromServer} />
-          </Grid>
+          </Grid> */}
           <Grid item md={12} lg={8} xl={8}>
             <div
               className='bg-no-repeat bg-center md:bg-top bg-cover px-8 sm:px-20 md:px-36 pt-8 pb-60 md:pb-[500px]'

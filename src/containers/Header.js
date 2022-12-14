@@ -66,7 +66,10 @@ const Header = () => {
             >
               Download
             </MuiLink>
-            <div className='flex items-center'>
+            <MuiLink href='https://docs.google.com/forms/d/e/1FAIpQLSfqxSkZGHDT7VDwr_eh2q9_WxRp-ax98btavT5mKagaL9cRVQ/viewform'>
+              <ConnectButton>Register</ConnectButton>
+            </MuiLink>
+            {/* <div className='flex items-center'>
               {!isLoggedIn ? (
                 <ConnectButton onClick={onConnectWallet}>Connect wallet</ConnectButton>
               ) : (
@@ -99,7 +102,7 @@ const Header = () => {
                   </StyledPopover>
                 </div>
               )}
-            </div>
+            </div> */}
           </div>
         </Toolbar>
       </AppBar>

@@ -6,10 +6,9 @@ const OokeengaINOInventory = () => {
   return (
     <div className='flex flex-col text-[#481A00]'>
       <img className='w-8/12 self-center' src={require('assets/projects/championLeague.png')} />
-      <img className='w-8/12 self-center mt-2 md:mt-10' src={require('assets/projects/ticket.png')} />
 
       <div className='font-bold text-md md:text-[28px] text-center mt-3 mb-2 md:mb-8' style={{ fontFamily: 'Skranji' }}>
-        Get Ticket <br />
+        REGISTER FREE <br />
         To Join Ookeenga Champion League
       </div>
 
@@ -18,7 +17,7 @@ const OokeengaINOInventory = () => {
         style={{ fontFamily: 'Skranji' }}
       >
         <img className='mr-2' src={require('assets/projects/ticketIcon.png')} />
-        Ticket Sales Schedule
+        Registration Schedule
       </span>
 
       <div className='flex justify-between items-start md:text-left p-2 md:px-6 md:py-4 bg-[#E6BA93] border-[1px] border-[#B37553] rounded-t-2xl font-medium'>
@@ -27,11 +26,11 @@ const OokeengaINOInventory = () => {
       </div>
       <div className='flex justify-between items-start md:text-left p-2 md:px-6 md:py-4 bg-[#E6BA93] border-x-[1px] border-[#B37553] font-medium'>
         <div className='font-medium text-sm md:text-base text-[#481A00]'>To</div>
-        <div className='font-bold text-right text-[#5C1710] text-sm md:text-base'>17 Dec 2022, 02:00 AM UTC</div>
+        <div className='font-bold text-right text-[#5C1710] text-sm md:text-base'>16 Dec 2022, 11:00 AM UTC</div>
       </div>
       <div className='flex justify-between items-start md:text-left p-2 md:px-6 md:py-4 bg-[#E6BA93] border-[1px] border-[#B37553] rounded-b-2xl font-medium'>
-        <div className='font-medium text-sm md:text-base text-[#481A00]'>Ticket Price</div>
-        <div className='font-bold text-right text-[#5C1710] text-sm md:text-base'>$1, purchased in OKG</div>
+        <div className='font-medium text-sm md:text-base text-[#481A00]'>Fee</div>
+        <div className='font-bold text-right text-[#5C1710] text-sm md:text-base'>FREE TO JOIN</div>
       </div>
 
       <span
@@ -47,11 +46,8 @@ const OokeengaINOInventory = () => {
             The rewards will be paid in OKG based on the equivalent exchange rate at the payout time.
           </li>
           <li className=''>Champions will receive rewards within one week after the Leaderboard is announced.</li>
-          <li className=''>
-            The Prize Pool takes 70% of all the Ticket Purchase and will be distributed to the Top 30% Winners of the
-            Champion League. 40 lucky players who didn't make it to the Top 30% winners will receive 1 NFT.
-          </li>
-          <li className=''>The exact number of prizes will be announced after Registration Closed on December 17.</li>
+          <li className=''>The Prize Pool will be distributed as below.</li>
+          <img className='w-full self-center mt-4' src={require('assets/rate.jpeg')} />
         </ul>
       </div>
 
@@ -67,8 +63,13 @@ const OokeengaINOInventory = () => {
 
         <span className='font-extrabold mb-2 text-sm md:text-base'>Who can join this Champion League?</span>
         <ul className='list-disc list-outside ml-5 mb-4'>
-          <li className=''>Everyone can enter the Champion League</li>
-          <li className=''>No NFT is required, all players will be given a same pool of non-NFT Heroes to play.</li>
+          <li className=''>
+            Everyone can enter the Champion League. No NFT is required, all players will be given a same pool of non-NFT
+            Heroes to play.
+          </li>
+          <li className=''>
+            Members of Ookeenga Dev Team and Champion League Organizers are forbidden to participate in this event.
+          </li>
           <li className=''>
             Members of Ookeenga Dev Team and Champion League Organizers are forbidden to participate in this event.
           </li>
@@ -81,7 +82,7 @@ const OokeengaINOInventory = () => {
 
         <span className='font-extrabold mb-2 text-sm md:text-base'>Date and Time</span>
         <ul className='list-disc list-outside ml-5 mb-4'>
-          <li className=''>9 AM - 3 PM, 17 December 2022.</li>
+          <li className=''>00:00 AM Saturday 17 Dec - 00:00 AM UTC Sunday 18 Dec</li>
         </ul>
 
         <span className='font-extrabold mb-2 text-sm md:text-base'>Champion League Venue:</span>
@@ -115,18 +116,18 @@ const OokeengaINOInventory = () => {
         <ul className='list-disc list-outside ml-5'>
           <li className=''>
             Each player is given an account to log into the Champion League Version. The account information will be
-            sent to you after you complete payment for ticket. One player has only one account.
+            sent to you after you complete registration. One player has only one account.
           </li>
           <li className=''>
-            All players will be given a fixed inventory of 10 Non-NFT Heroes and the same amount of resources, including
+            All players will be given a fixed inventory of 20 Non-NFT Heroes and the same amount of resources, including
             in-game items, EXP and gKAB. You may swap heroes and cards from that inventory only. You may upgrade heroes
             and use given items to optimize their strategy for the game.
           </li>
           <li className=''>Each player has 20 playing turns in the Champion League.</li>
           <li className=''>All players start at the same stage chosen by the Champion League organizer.</li>
           <li className=''>
-            The Champion League will open from 9 AM - 3 PM. The Leaderboard will be ranked based on the games
-            played during this time.
+            The Champion League will open from 00:00 AM Saturday 17 Dec - 00:00 AM UTC Sunday 18 Dec. The Leaderboard
+            will be ranked based on the games played during this time.
           </li>
         </ul>
       </div>
@@ -141,7 +142,7 @@ const OokeengaINOInventory = () => {
       <div className='p-2 md:p-5 bg-[#E6BA93] border-[1px] border-[#B37553] rounded-2xl font-medium text-sm md:text-base'>
         <span className='mb-4'>The Ranks on the Champion League Leaderboard are based on the following criteria:</span>
         <ul className='list-disc list-outside ml-5'>
-          <li className=''>The number of stars a player gets in 10 playing turns.</li>
+          <li className=''>The number of stars a player gets in 20 playing turns.</li>
           <li className=''>
             If two players have equal numbers of stars, the player at the lower stages will get a higher rank.
           </li>
@@ -165,8 +166,7 @@ const OokeengaINOInventory = () => {
         <ul className='list-disc list-outside ml-5 mb-4'>
           <li className=''>
             Ookeenga Champion League is an event for every gamer as players won’t need NFT to play. Champion League
-            participants will play in a random PvE map picked by the Host. Top 30% players on Leaderboard will be the
-            Champion and bring home the OKG rewards. The rest will receive 1 NFT Hero.
+            participants will play in a random PvE map picked by the Host.
           </li>
         </ul>
 
@@ -183,7 +183,7 @@ const OokeengaINOInventory = () => {
         </span>
         <ul className='list-disc list-outside ml-5 mb-4'>
           <li className=''>
-            Yes. It’s a absolutely fair game for everyone as all players will be given a fixed inventory of 10 Non-NFT
+            Yes. It’s an absolutely fair game for everyone as all players will be given a fixed inventory of 20 Non-NFT
             Heroes and the same amount of resources, including in-game items, EXP and gKAB. You may swap heroes and
             cards from that inventory only. You may upgrade heroes and use given items to optimize their strategy for
             the game.
@@ -204,11 +204,11 @@ const OokeengaINOInventory = () => {
           How to participate in Ookeenga Champion League?
         </span>
         <div className='mb-4'>
-          Register and Purchase Ticket at: ​
+          Register your slot at: ​
           <MuiLink className='hover:underline' style={{ color: '#B74404' }} href='https://okglabs.com/tickets'>
             ​okglabs.com/tickets.
           </MuiLink>{' '}
-          Registration will be closed at 02 AM UTC, Saturday 17 December.
+          Registration will be closed at 11 AM UTC, Saturday 16 December.
         </div>
 
         <span className='font-extrabold mb-2 text-sm md:text-base'>How to win in Ookeenga Champion League?</span>

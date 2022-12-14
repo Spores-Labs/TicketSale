@@ -10,11 +10,11 @@ const privateRoute = {
     path: '/tickets',
     component: OokeengaINOLanding,
   },
-  projectOrder: {
-    path: '/tickets/order-history',
-    component: OokeengaINOOrder,
-    requiredLogin: true,
-  },
+  // projectOrder: {
+  //   path: '/tickets/order-history',
+  //   component: OokeengaINOOrder,
+  //   requiredLogin: true,
+  // },
 };
 
 export default privateRoute;
